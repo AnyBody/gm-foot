@@ -1,8 +1,0 @@
-AnyFolder FootGM = {
-  AnyVar Mass = 1.30; // kg Klein Horsman dataset Mass of Foot
-  AnyVar Length = 0.2353423; //Back of heel (tuber calcanei) to second toe tip.
-  AnyVar Width = 0.07649351; //MPjnt1 center to MPjnt5 center.
-  AnyVar Height = 0.07116012; //vertical from base of heel (medial process) to ankle joint.
-  AnyVar Density = 1000;
-  AnyVar HeelHeight=0.05;  //measured from floor to ankle joint
-};

@@ -15,40 +15,39 @@ TLEM 2.1 model without duplicating the entire lower extremity model unnecessaril
 TODO: 
 =====
 
-1. Make the model load
+2. Fix Ankle ligaments and Ankle joint location
 
-2. Fix ankle joints and ligaments
-
-3. Add lower leg muscles back
-
-4. Validate results
+4. Test and Validate results
 
 
 Usage: 
 =============
 
-This implmentation only works with the TLEM 2 leg model. It also requires that
+This implmentation only works with the TLEM 2 leg model and it requires that
 the existing feet and lower leg muscles are disabled with the following setting:
 ``#define BM_FOOT_MODEL _FOOT_MODEL_NONE_``. 
 
 .. note:: This switch is only available in AMMR 2.0.1 or later.
 
-Secondly, the GM foot model must use its own special scaling law. The code for
-enabling the implementation looks like this: 
+To use the GM foot model the file ``GM_Foot_libdef.any`` must be included before 
+the first ``Main`` statement. 
 
 .. code-block:: AnyScript
 
-    // Setup required for using th GM foot model
-    #define BM_LEG_MODEL _LEG_MODEL_TLEM2_
-    #define BM_FOOT_MODEL _FOOT_MODEL_NONE_
-    #define BM_SCALING _SCALING_USERDEFINED_
-    #path BM_SCALING_FILE "ScalingLengthMassFat.any"  
-        
-    // Inlcude the Human model as always
-    #include "<ANYBODY_PATH_BODY>/HumanModel.any"
+    // Include before the first Main
+    #include "path/to/GM_Foot/GM_Foot_libdef.any"
 
-    // Finally include the GM foot model.
-    #include "FootGM.any"
+    Main = {
+
+        // Required for using th GM foot model
+        #define BM_LEG_MODEL _LEG_MODEL_TLEM2_
+        #define BM_FOOT_MODEL _FOOT_MODEL_NONE_
+        
+        // Include the HumNModel
+        #include "<ANYBODY_PATH_BODY>/HumanModel.any"
+
+        // Include the GM foot model after the HumanModel.any
+        #include "<GM_FOOT_PATH>/GM_foot_model.any"
 
 
 See :file:`test_main.any` for an example of including the GM foot. 

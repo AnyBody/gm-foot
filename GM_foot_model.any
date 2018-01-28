@@ -2,16 +2,13 @@
 
 HumanModel = 
 {
-  #include "FootGM_Mannequin.any"
-  #include "FootGM_Anthropometrics.any"
-   
-  StrengthParameters={
-    AnyVar PlantarFasciaStiffnessCoeffPh = 1;
-    AnyVar PlantarFasciaStiffnessCoeffMt = 1;
-  };      
-      
-  #include "FootType.any"
-  
+  // This class templates adds changes to 
+  // the HumanModel, Mannequin, Scaling etc. to allow 
+  // for the GM foot model.
+  GM_FOOT_Mixin GMFootMixin = {
+    
+  };
+     
 
   BodyModel = {
     Right = {
@@ -21,7 +18,7 @@ HumanModel =
       #define SignRef 1
       #define _LEFT_RIGHT_ "Right"
       
-      #include "FootGM_root.any"
+      #include "GM_foot.root.any"
     
       #undef _LEFT_RIGHT_
    }; // Right
@@ -33,7 +30,7 @@ HumanModel =
       #define SignRef -1
       #define _LEFT_RIGHT_ "Left"
       
-      #include "FootGM_root.any"
+      #include "GM_foot.root.any"
     
       #undef _LEFT_RIGHT_
    }; // Left

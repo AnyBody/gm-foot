@@ -22,7 +22,7 @@ Leg = {
   #else
   Mus = 
   {
-    //#include "Mus.any"
+    #include "Mus.any"
     #include "Foot_Mus.any"
     #include "MusControlSeg.any"
   };  
