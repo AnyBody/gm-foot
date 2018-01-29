@@ -12,6 +12,10 @@ maintain and made it impossible to use the model with new TLEM 2.1 model.
 The goal is to restructure the GM foot model to integrate nicely into the TLEM
 2.1 model without duplicating the entire lower extremity model unnecessarily.
 
+
+.. image:: Tests/GM_foot.gif
+
+
 TODO: 
 =====
 

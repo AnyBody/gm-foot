@@ -35,7 +35,7 @@ AnyFolder InterMetatarsalHeadContact = {
         Radius = {Rx, Ry, Rz};
         AnyDrawParamSurf Draw = 
         {
-          //Visible = On;
+          Visible = Off;
           Opacity = 0.5;
           //RGB = {0.65, 0.65, 0.65};
         };
@@ -74,7 +74,7 @@ AnyFolder InterMetatarsalHeadContact = {
         Radius = {Rx, Ry, Rz};
         AnyDrawParamSurf Draw = 
         {
-          //Visible = On;
+          Visible = Off;
           Opacity = 0.5;
           //RGB = {0.65, 0.65, 0.65};
         };
@@ -112,7 +112,7 @@ AnyFolder InterMetatarsalHeadContact = {
         Radius = {Rx, Ry, Rz};
         AnyDrawParamSurf Draw = 
         {
-          //Visible = On;
+          Visible = Off;
           Opacity = 0.5;
           //RGB = {0.65, 0.65, 0.65};
         };
@@ -151,7 +151,7 @@ AnyFolder InterMetatarsalHeadContact = {
         Radius = {Rx, Ry, Rz};
         AnyDrawParamSurf Draw = 
         {
-          //Visible = On;
+          Visible = Off;
           Opacity = 0.5;
           //RGB = {0.65, 0.65, 0.65};
         };
@@ -190,7 +190,7 @@ AnyFolder InterMetatarsalHeadContact = {
         Radius = {Rx, Ry, Rz};
         AnyDrawParamSurf Draw = 
         {
-          //Visible = On;
+          Visible = Off;
           Opacity = 0.5;
           //RGB = {0.65, 0.65, 0.65};
         };
@@ -224,15 +224,15 @@ AnyFolder InterMetatarsalHeadContact = {
     
     AnyRefNode n1={  
       sRel={-0.5*.L*sin(60*pi/180),0.5*.L,0};
-         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
+//         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
     };
     AnyRefNode n2={  
       sRel={0.5*.L*sin(60*pi/180),0,0};
-         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
+//         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
     };
     AnyRefNode n3={  
       sRel={-0.5*.L*sin(60*pi/180),-0.5*.L,0};
-          AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
+//          AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
     };
   };
   
@@ -579,15 +579,15 @@ AnyFolder InterMetatarsalHeadContact = {
     
     AnyRefNode n1={  
       sRel={-0.5*.L*sin(60*pi/180),0.5*.L,0};
-         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
+//         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
     };
     AnyRefNode n2={  
       sRel={0.5*.L*sin(60*pi/180),0,0};
-         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
+//         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
     };
     AnyRefNode n3={  
       sRel={-0.5*.L*sin(60*pi/180),-0.5*.L,0};
-          AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
+//          AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
     };
   };
   
@@ -929,15 +929,15 @@ AnyFolder InterMetatarsalHeadContact = {
     
     AnyRefNode n1={  
       sRel={-0.5*.L*sin(60*pi/180),0.5*.L,0};
-         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
+//         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
     };
     AnyRefNode n2={  
       sRel={0.5*.L*sin(60*pi/180),0,0};
-         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
+//         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
     };
     AnyRefNode n3={  
       sRel={-0.5*.L*sin(60*pi/180),-0.5*.L,0};
-          AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
+//          AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
     };
   };
   
@@ -1278,15 +1278,15 @@ AnyFolder InterMetatarsalHeadContact = {
     
     AnyRefNode n1={  
       sRel={-0.5*.L*sin(60*pi/180),0.5*.L,0};
-         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
+//         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
     };
     AnyRefNode n2={  
       sRel={0.5*.L*sin(60*pi/180),0,0};
-         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
+//         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
     };
     AnyRefNode n3={  
       sRel={-0.5*.L*sin(60*pi/180),-0.5*.L,0};
-          AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
+//          AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.15*{0.05,0.05,0.05};};
     };
   };
   

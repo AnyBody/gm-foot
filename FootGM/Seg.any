@@ -177,13 +177,13 @@ AnySeg Talus = {
   AnyRefNode MedMalleoli = 
   {
     sRel = .Scale({0.0553215, 0.06030982, ...Sign*-0.02834151});
-    AnyDrawRefFrame drw={ScaleXYZ=2*{0.005,0.005,0.005};RGB={1,0,0};};
+//    AnyDrawRefFrame drw={ScaleXYZ=2*{0.005,0.005,0.005};RGB={1,0,0};};
   };
   
   AnyRefNode LatMalleoli = 
   {
     sRel = .Scale({0.0449248, 0.07027722, ...Sign*0.02751965});
-    AnyDrawRefFrame drw={ScaleXYZ=2*{0.005,0.005,0.005};RGB={1,0,0};};
+//    AnyDrawRefFrame drw={ScaleXYZ=2*{0.005,0.005,0.005};RGB={1,0,0};};
   };
   
   
@@ -210,7 +210,7 @@ AnySeg Talus = {
     AnyVar ARelCorrectionAngleCond = iffun(gtfun(ARelCorrectionAngle,0.15),ARelCorrectionAngle,0.0);
     ARel = ARelStandard * RotMat(ARelCorrectionAngleCond,x);
     
-    AnyDrawRefFrame drw={ScaleXYZ=10*{0.005,0.005,0.005};RGB={1,0,0};};
+//    AnyDrawRefFrame drw={ScaleXYZ=10*{0.005,0.005,0.005};RGB={1,0,0};};
   };
   
   
@@ -321,20 +321,20 @@ AnySeg Calcaneus = {
   {
     sRel = .Scale({-0.02043697, 0.09172377, ...Sign*-0.005106899});
     ARel = RotMat(pi,x)*RotMat(pi/2,y);
-    AnyDrawRefFrame drw2={ScaleXYZ={0.02,0.02,0.02};RGB={0,0,1};};
+//    AnyDrawRefFrame drw2={ScaleXYZ={0.02,0.02,0.02};RGB={0,0,1};};
   };
   
   AnyRefNode HeelStrikeNode = 
   {
     sRel = .Scale({-0.01643697, 0.10272377, ...Sign*-0.005106899});
     ARel = RotMat(pi,x)*RotMat(pi/2,y);
-    AnyDrawRefFrame drw2={ScaleXYZ={0.02,0.02,0.02};RGB={0,0,1};};
+//    AnyDrawRefFrame drw2={ScaleXYZ={0.02,0.02,0.02};RGB={0,0,1};};
   };
 
 
   AnyRefNode SustentaculumTali= 
   {
-    AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={0,0,0};};
+//    AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={0,0,0};};
     sRel = .Scale({0.02883537, 0.05635495, ...Sign*-0.0216453});
   };
   
@@ -362,7 +362,7 @@ AnySeg Calcaneus = {
   
   AnyRefNode TendonCalcaneousNode= 
   {
-    AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={0,0,0};};
+//    AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={0,0,0};};
     //sRel = .Scale({-0.01+0.01702725, 0.01+0.1094617, ...Sign*(0.0008899511+.02)});
     sRel = .Scale({0.01702725, 0.1094617, ...Sign*(0.0008899511)});
 
@@ -1279,7 +1279,7 @@ AnySeg Metatarsal1 = {
   
   AnyRefNode MTHeadMedialNode = {
     sRel = .Scale({0.004, -0.066, ...Sign*-0.031})*.FootType.MetaScale;
-    AnyDrawRefFrame drw = {ScaleXYZ = 0.03*{1,1,1};};
+//    AnyDrawRefFrame drw = {ScaleXYZ = 0.03*{1,1,1};};
   };
   
   //***********************
@@ -1318,7 +1318,7 @@ AnySeg Metatarsal1 = {
   
   AnyRefNode LigAponeurosisPlantaris = 
   {
-    AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1.0,1.0,0.0};};
+//    AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1.0,1.0,0.0};};
     sRel = .Scale({-0.012895353, -0.06379488, ...Sign*-0.01172546}*.FootType.MetaScale);
   };
   
@@ -1846,7 +1846,7 @@ AnySeg Metatarsal5 = {
   
     AnyRefNode MTHeadLateralNode = {
       sRel = .Scale({-0.01012619, -0.03599002, ...Sign*0.06112629});
-      AnyDrawRefFrame drw = {ScaleXYZ = 0.03*{1,1,1};};
+//      AnyDrawRefFrame drw = {ScaleXYZ = 0.03*{1,1,1};};
     };
   
   //***********************
@@ -2889,13 +2889,13 @@ AnySeg DistalPhalange1 = {
 
   AnyRefNode ToeTip = 
   {
-     AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={0,0,1};};
+//     AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={0,0,1};};
     sRel = .Scale({0.00136714, -0.1268519, ...Sign*0.002927616}*.FootType.DistPhalScale);
   };
   
   AnyRefNode GroundContactNode = 
   {
-     AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={0,0,1};};
+//     AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={0,0,1};};
     sRel = .Scale({-0.006705874, -0.1152933, ...Sign*-0.001366105}*.FootType.DistPhalScale);
   };
   
@@ -3010,7 +3010,7 @@ AnySeg DistalPhalange2 = {
   
   AnyRefNode GroundContactNode = 
   {
-     AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={0,0,1};};
+//     AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={0,0,1};};
     sRel = .Scale({-0.009118326, -0.1161024, ...Sign*0.02166108});
   };
 

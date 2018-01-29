@@ -1111,7 +1111,7 @@
         Radius = {Rx, Ry, Rz};
         AnyDrawParamSurf Draw = 
         {
-          Visible = On;
+          Visible = Off;
           Opacity = 0.5;
         };
       };

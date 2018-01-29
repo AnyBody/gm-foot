@@ -13,7 +13,6 @@
 #include "../FootGM/GM_Foot_libdef.any"
 #include "libdef.any"
 
-
 Main = {  
   // ----------------------------------------------------------
   // Model configuration:
@@ -22,9 +21,10 @@ Main = {
   // ----------------------------------------------------------
   #ifndef TEST_NAME
   #define BM_LEG_MUSCLES_BOTH ON
-  #define BM_LEG_LEFT ON
+  #define BM_LEG_LEFT OFF
   #endif
   
+Main.DrawSettings.Muscle.Opacity = 0.2;
 // // Setup required for using th GM foot model
 // #define BM_SCALING _SCALING_XYZ_
 //  Main.HumanModel.Anthropometrics.SegmentScaleFactors.Right.Thigh.LengthScale = 1.2;
