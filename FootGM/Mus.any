@@ -157,7 +157,7 @@ AnyViaPointMuscle FlexorDigitorumLongusToe2Tendon = {
   AnyRefNode &Via11 = ..Seg.MiddlePhalange2.FlexorDigitorumLongusViaNode11;
   AnyRefNode &Ins = ..Seg.DistalPhalange2.FlexorDigitorumLongusNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -170,7 +170,7 @@ AnyViaPointMuscle FlexorDigitorumLongusToe3Tendon = {
   AnyRefNode &Via14 = ..Seg.MiddlePhalange3.FlexorDigitorumLongusViaNode14;
   AnyRefNode &Ins = ..Seg.DistalPhalange3.FlexorDigitorumLongusNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -183,7 +183,7 @@ AnyViaPointMuscle FlexorDigitorumLongusToe4Tendon = {
   AnyRefNode &Via17 = ..Seg.MiddlePhalange4.FlexorDigitorumLongusViaNode17;
   AnyRefNode &Ins = ..Seg.DistalPhalange4.FlexorDigitorumLongusNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -196,7 +196,7 @@ AnyViaPointMuscle FlexorDigitorumLongusToe5Tendon = {
   AnyRefNode &Via20 = ..Seg.MiddlePhalange5.FlexorDigitorumLongusViaNode20;
   AnyRefNode &Ins = ..Seg.DistalPhalange5.FlexorDigitorumLongusNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -344,7 +344,7 @@ AnyViaPointMuscle TibialisPosteriorNavicularTendon = {
   AnyRefNode &Via10 = ..Seg.Calcaneus.TibialisPosteriorViaNode10;
   AnyRefNode &Ins = ..Seg.Navicular.TibialisPosteriorNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -355,7 +355,7 @@ AnyViaPointMuscle TibialisPosteriorMedCuneiTendon = {
 //  AnyRefNode &Via11 = ..Seg.Navicular.TibialisPosteriorViaNode11;
   AnyRefNode &Ins = ..Seg.MedialCuneiform.TibialisPosteriorNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -366,7 +366,7 @@ AnyViaPointMuscle TibialisPosteriorIntCuneiTendon = {
 //  AnyRefNode &Via11 = ..Seg.Navicular.TibialisPosteriorViaNode11;
   AnyRefNode &Ins = ..Seg.IntermediateCuneiform.TibialisPosteriorNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -377,7 +377,7 @@ AnyViaPointMuscle TibialisPosteriorLatCuneiTendon = {
 //  AnyRefNode &Via11 = ..Seg.Navicular.TibialisPosteriorViaNode11;
   AnyRefNode &Ins = ..Seg.LateralCuneiform.TibialisPosteriorNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -388,7 +388,7 @@ AnyViaPointMuscle TibialisPosteriorCuboidTendon = {
 //  AnyRefNode &Via11 = ..Seg.Navicular.TibialisPosteriorViaNode11;
   AnyRefNode &Ins = ..Seg.Cuboid.TibialisPosteriorNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -399,7 +399,7 @@ AnyViaPointMuscle TibialisPosteriorMt2Tendon = {
 //  AnyRefNode &Via11 = ..Seg.Navicular.TibialisPosteriorViaNode11;
   AnyRefNode &Ins = ..Seg.Metatarsal2.TibialisPosteriorNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -410,7 +410,7 @@ AnyViaPointMuscle TibialisPosteriorMt3Tendon = {
 //  AnyRefNode &Via11 = ..Seg.Navicular.TibialisPosteriorViaNode11;
   AnyRefNode &Ins = ..Seg.Metatarsal3.TibialisPosteriorNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -421,7 +421,7 @@ AnyViaPointMuscle TibialisPosteriorMt4Tendon = {
 //  AnyRefNode &Via11 = ..Seg.Navicular.TibialisPosteriorViaNode11;
   AnyRefNode &Ins = ..Seg.Metatarsal4.TibialisPosteriorNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -433,7 +433,7 @@ AnyViaPointMuscle TibialisPosteriorMt4Tendon = {
 //  AnyRefNode &Via11 = ..Seg.Navicular.TibialisPosteriorViaNode11;
 //  AnyRefNode &Ins = ..Seg.Metatarsal5.TibialisPosteriorNode;
 //  AnyDrawMuscle DrwMus = {
-//    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+//    #include "MusLigamentDrawSettings.any" 
 //  };
 //};
 
@@ -640,7 +640,7 @@ AnyViaPointMuscle TibialisAnteriorMedCuneiTendon = {
   AnyRefNode &Via3 = ..Seg.MedialCuneiform.TibialisAnteriorViaNode3;
   AnyRefNode &Ins = ..Seg.MedialCuneiform.TibialisAnteriorNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -650,7 +650,7 @@ AnyViaPointMuscle TibialisAnteriorMt1Tendon = {
   AnyRefNode &Via3 = ..Seg.MedialCuneiform.TibialisAnteriorViaNode3;
   AnyRefNode &Ins = ..Seg.Metatarsal1.TibialisAnteriorNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -692,8 +692,8 @@ AnyViaPointMuscle PeroneusBrevis1 = {
   AnyRefNode &Org = ..Seg.Shank.PeroneusBrevis1Node;
   AnyRefNode &Via1 = ..Seg.Shank.PeroneusBrevisViaNode1;
   AnyRefNode &Via2 = ..Seg.Shank.PeroneusBrevisViaNode2;
-  AnyRefNode &Via3 = ..Seg.Shank.PeroneusBrevisViaNode3;
-  AnyRefNode &Via4 = ..Seg.Calcaneus.PeroneusBrevisViaNode3;
+//  AnyRefNode &Via3 = ..Seg.Shank.PeroneusBrevisViaNode3;
+//  AnyRefNode &Via4 = ..Seg.Calcaneus.PeroneusBrevisViaNode3;
   AnyRefNode &Via5 = ..Seg.Calcaneus.PeroneusBrevisViaNode4;
   AnyRefNode &Ins = ..Seg.Metatarsal5.PeroneusBrevis1Node;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" };
@@ -704,8 +704,8 @@ AnyViaPointMuscle PeroneusBrevis2 = {
   AnyRefNode &Org = ..Seg.Shank.PeroneusBrevis2Node;
   AnyRefNode &Via1 = ..Seg.Shank.PeroneusBrevisViaNode1;
   AnyRefNode &Via2 = ..Seg.Shank.PeroneusBrevisViaNode2;
-  AnyRefNode &Via3 = ..Seg.Shank.PeroneusBrevisViaNode3;
-  AnyRefNode &Via4 = ..Seg.Calcaneus.PeroneusBrevisViaNode3;
+//  AnyRefNode &Via3 = ..Seg.Shank.PeroneusBrevisViaNode3;
+//  AnyRefNode &Via4 = ..Seg.Calcaneus.PeroneusBrevisViaNode3;
   AnyRefNode &Via5 = ..Seg.Calcaneus.PeroneusBrevisViaNode4;
   AnyRefNode &Ins = ..Seg.Metatarsal5.PeroneusBrevis2Node;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" };
@@ -716,8 +716,8 @@ AnyViaPointMuscle PeroneusBrevis3 = {
   AnyRefNode &Org = ..Seg.Shank.PeroneusBrevis3Node;
   AnyRefNode &Via1 = ..Seg.Shank.PeroneusBrevisViaNode1;
   AnyRefNode &Via2 = ..Seg.Shank.PeroneusBrevisViaNode2;
-  AnyRefNode &Via3 = ..Seg.Shank.PeroneusBrevisViaNode3;
-  AnyRefNode &Via4 = ..Seg.Calcaneus.PeroneusBrevisViaNode3;
+//  AnyRefNode &Via3 = ..Seg.Shank.PeroneusBrevisViaNode3;
+//  AnyRefNode &Via4 = ..Seg.Calcaneus.PeroneusBrevisViaNode3;
   AnyRefNode &Via5 = ..Seg.Calcaneus.PeroneusBrevisViaNode4;
   AnyRefNode &Ins = ..Seg.Metatarsal5.PeroneusBrevis3Node;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" };
@@ -730,9 +730,9 @@ AnyViaPointMuscle PeroneusLongus1 = {
   AnyRefNode &Org = ..Seg.Shank.PeroneusLongus1Node;
   AnyRefNode &Via1 = ..Seg.Shank.PeroneusLongusViaNode1;
   AnyRefNode &Via2 = ..Seg.Shank.PeroneusLongusViaNode2;
-  AnyRefNode &Via3 = ..Seg.Shank.PeroneusLongusViaNode3;
+//  AnyRefNode &Via3 = ..Seg.Shank.PeroneusLongusViaNode3;
 //  AnyRefNode &Via4 = ..Seg.Shank.PeroneusLongusViaNode4;
-  AnyRefNode &Via5 = ..Seg.Calcaneus.PeroneusLongusViaNode3;
+//  AnyRefNode &Via5 = ..Seg.Calcaneus.PeroneusLongusViaNode3;
   AnyRefNode &Via6 = ..Seg.Calcaneus.PeroneusLongusViaNode4;
   AnyRefNode &Via7 = ..Seg.Cuboid.PeroneusLongusViaNode5;
   AnyRefNode &Ins = ..Seg.Cuboid.PeroneusLongusViaNode6;
@@ -746,9 +746,9 @@ AnyViaPointMuscle PeroneusLongus2 = {
   AnyRefNode &Org = ..Seg.Shank.PeroneusLongus2Node;
   AnyRefNode &Via1 = ..Seg.Shank.PeroneusLongusViaNode1;
   AnyRefNode &Via2 = ..Seg.Shank.PeroneusLongusViaNode2;
-  AnyRefNode &Via3 = ..Seg.Shank.PeroneusLongusViaNode3;
+//  AnyRefNode &Via3 = ..Seg.Shank.PeroneusLongusViaNode3;
 //  AnyRefNode &Via4 = ..Seg.Shank.PeroneusLongusViaNode4;
-  AnyRefNode &Via5 = ..Seg.Calcaneus.PeroneusLongusViaNode3;
+//  AnyRefNode &Via5 = ..Seg.Calcaneus.PeroneusLongusViaNode3;
   AnyRefNode &Via6 = ..Seg.Calcaneus.PeroneusLongusViaNode4;
   AnyRefNode &Via7 = ..Seg.Cuboid.PeroneusLongusViaNode5;
   AnyRefNode &Ins = ..Seg.Cuboid.PeroneusLongusViaNode6;
@@ -761,9 +761,9 @@ AnyViaPointMuscle PeroneusLongus3 = {
   AnyRefNode &Org = ..Seg.Shank.PeroneusLongus3Node;
   AnyRefNode &Via1 = ..Seg.Shank.PeroneusLongusViaNode1;
   AnyRefNode &Via2 = ..Seg.Shank.PeroneusLongusViaNode2;
-  AnyRefNode &Via3 = ..Seg.Shank.PeroneusLongusViaNode3;
+//  AnyRefNode &Via3 = ..Seg.Shank.PeroneusLongusViaNode3;
 //  AnyRefNode &Via4 = ..Seg.Shank.PeroneusLongusViaNode4;
-  AnyRefNode &Via5 = ..Seg.Calcaneus.PeroneusLongusViaNode3;
+//  AnyRefNode &Via5 = ..Seg.Calcaneus.PeroneusLongusViaNode3;
   AnyRefNode &Via6 = ..Seg.Calcaneus.PeroneusLongusViaNode4;
   AnyRefNode &Via7 = ..Seg.Cuboid.PeroneusLongusViaNode5;
   AnyRefNode &Ins = ..Seg.Cuboid.PeroneusLongusViaNode6;
@@ -778,7 +778,7 @@ AnyViaPointMuscle PeroneusLongusMedCuneiTendon = {
   AnyRefNode &Via3 = ..Seg.Cuboid.PeroneusLongusViaNode7;
   AnyRefNode &Ins = ..Seg.MedialCuneiform.PeroneusLongusNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -789,7 +789,7 @@ AnyViaPointMuscle PeroneusLongusMt1Tendon = {
   AnyRefNode &Via3 = ..Seg.Cuboid.PeroneusLongusViaNode7;
   AnyRefNode &Ins = ..Seg.Metatarsal1.PeroneusLongusNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -922,7 +922,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe2Tendon = {
   AnyRefNode &Via6Bis = ..Seg.Metatarsal2.ExtensorDigitorumLongusViaNode6Bis;
   AnyRefNode &Via6 = ..Seg.Metatarsal2.ExtensorDigitorumLongusViaNode6;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -933,7 +933,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe2TendonPart1 = {
   AnyRefNode &Via8 = ..Seg.MiddlePhalange2.ExtensorDigitorumLongusViaNode8;
   AnyRefNode &Ins = ..Seg.DistalPhalange2.ExtensorDigitorumLongusNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -943,7 +943,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe2TendonPart2 = {
   AnyRefNode &Via7 = ..Seg.ProximalPhalange2.ExtensorDigitorumLongusViaNode7;
   AnyRefNode &Ins = ..Seg.MiddlePhalange2.ExtensorDigitorumLongusNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -952,7 +952,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe2TendonPart3 = {
   AnyRefNode &Via6 = ..Seg.Metatarsal2.ExtensorDigitorumLongusViaNode6;
   AnyRefNode &Ins = ..Seg.ProximalPhalange2.DI2_Ins;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -961,7 +961,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe2TendonPart4 = {
   AnyRefNode &Via6 = ..Seg.Metatarsal2.ExtensorDigitorumLongusViaNode6;
   AnyRefNode &Ins = ..Seg.ProximalPhalange2.DI1_Ins;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -974,7 +974,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe3Tendon = {
   AnyRefNode &Via9Bis = ..Seg.Metatarsal3.ExtensorDigitorumLongusViaNode9Bis;
   AnyRefNode &Via9 = ..Seg.Metatarsal3.ExtensorDigitorumLongusViaNode9;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -985,7 +985,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe3TendonPart1 = {
   AnyRefNode &Via11 = ..Seg.MiddlePhalange3.ExtensorDigitorumLongusViaNode11;
   AnyRefNode &Ins = ..Seg.DistalPhalange3.ExtensorDigitorumLongusNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -995,7 +995,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe3TendonPart2 = {
   AnyRefNode &Via10 = ..Seg.ProximalPhalange3.ExtensorDigitorumLongusViaNode10;
   AnyRefNode &Ins = ..Seg.MiddlePhalange3.ExtensorDigitorumLongusNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -1004,7 +1004,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe3TendonPart3 = {
   AnyRefNode &Via9 = ..Seg.Metatarsal3.ExtensorDigitorumLongusViaNode9;
   AnyRefNode &Ins = ..Seg.ProximalPhalange3.DI3_Ins;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -1013,7 +1013,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe3TendonPart4 = {
   AnyRefNode &Via9 = ..Seg.Metatarsal3.ExtensorDigitorumLongusViaNode9;
   AnyRefNode &Ins = ..Seg.ProximalPhalange3.PI1_Ins;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -1026,7 +1026,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe4Tendon = {
   AnyRefNode &Via12Bis = ..Seg.Metatarsal4.ExtensorDigitorumLongusViaNode12Bis;
   AnyRefNode &Via12 = ..Seg.Metatarsal4.ExtensorDigitorumLongusViaNode12;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -1037,7 +1037,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe4TendonPart1 = {
   AnyRefNode &Via14 = ..Seg.MiddlePhalange4.ExtensorDigitorumLongusViaNode14;
   AnyRefNode &Ins = ..Seg.DistalPhalange4.ExtensorDigitorumLongusNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any"};
+    #include "MusLigamentDrawSettings.any"};
 };
 
 AnyViaPointMuscle ExtensorDigitorumLongusToe4TendonPart2 = {
@@ -1046,7 +1046,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe4TendonPart2 = {
   AnyRefNode &Via13 = ..Seg.ProximalPhalange4.ExtensorDigitorumLongusViaNode13;
   AnyRefNode &Ins = ..Seg.MiddlePhalange4.ExtensorDigitorumLongusNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -1055,7 +1055,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe4TendonPart3 = {
   AnyRefNode &Via12 = ..Seg.Metatarsal4.ExtensorDigitorumLongusViaNode12;
   AnyRefNode &Ins = ..Seg.ProximalPhalange4.DI4_Ins;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -1064,7 +1064,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe4TendonPart4 = {
   AnyRefNode &Via12 = ..Seg.Metatarsal4.ExtensorDigitorumLongusViaNode12;
   AnyRefNode &Ins = ..Seg.ProximalPhalange4.PI2_Ins;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -1076,7 +1076,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe5Tendon = {
 //  AnyRefNode &Via5Bis = ..Seg.Navicular.ExtensorDigitorumLongusViaNode5Bis;
   AnyRefNode &Via15 = ..Seg.Metatarsal5.ExtensorDigitorumLongusViaNode15;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -1087,7 +1087,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe5TendonPart1 = {
   AnyRefNode &Via17 = ..Seg.MiddlePhalange5.ExtensorDigitorumLongusViaNode17;
   AnyRefNode &Ins = ..Seg.DistalPhalange5.ExtensorDigitorumLongusNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -1097,7 +1097,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe5TendonPart2 = {
   AnyRefNode &Via16 = ..Seg.ProximalPhalange5.ExtensorDigitorumLongusViaNode16;
   AnyRefNode &Ins = ..Seg.MiddlePhalange5.ExtensorDigitorumLongusNode;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -1106,7 +1106,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe5TendonPart3 = {
   AnyRefNode &Via15 = ..Seg.Metatarsal5.ExtensorDigitorumLongusViaNode15;
   AnyRefNode &Ins = ..Seg.ProximalPhalange5.ABDM_Ins;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -1115,7 +1115,7 @@ AnyViaPointMuscle ExtensorDigitorumLongusToe5TendonPart4 = {
   AnyRefNode &Via15 = ..Seg.Metatarsal5.ExtensorDigitorumLongusViaNode15;
   AnyRefNode &Ins = ..Seg.ProximalPhalange5.PI3_Ins;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -1683,7 +1683,7 @@ AnyViaPointMuscle ExtensorHallucisLongusTendonPart1 = {
   AnyRefNode &Via10 = ..Seg.ProximalPhalange1.ExtensorHallucisLongusViaNode10;
   AnyRefNode &Ins = ..Seg.DistalPhalange1.ExtensorHallucisLongus1Node;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -1692,7 +1692,7 @@ AnyViaPointMuscle ExtensorHallucisLongusTendonPart2 = {
   AnyRefNode &Via9 = ..Seg.Metatarsal1.ExtensorHallucisLongusViaNode9;
   AnyRefNode &Ins = ..Seg.ProximalPhalange1.ADHT_Ins;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 
@@ -1701,7 +1701,7 @@ AnyViaPointMuscle ExtensorHallucisLongusTendonPart3 = {
   AnyRefNode &Via9 = ..Seg.Metatarsal1.ExtensorHallucisLongusViaNode9;
   AnyRefNode &Ins = ..Seg.ProximalPhalange1.ABDH_Ins;
   AnyDrawMuscle DrwMus = {
-    #include "<ANYBODY_PATH_BODY>/DrawSettings/MusDrawSettings.any" 
+    #include "MusLigamentDrawSettings.any" 
   };
 };
 

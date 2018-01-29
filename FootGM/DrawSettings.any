@@ -1,4 +1,0 @@
-Main.DrawSettings.Colors = {
-  AnyVec3 Ligaments = {1.0, 1.0, 1.0};
-};
-Main.DrawSettings.Muscle.Bulging = 3;

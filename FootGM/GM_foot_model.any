@@ -1,13 +1,14 @@
-#include "DrawSettings.any"
+#include "check_configuration.any"
+
+
+#include "<ANYBODY_PATH_BODY>/HumanModel.any"
 
 HumanModel = 
 {
-  // This class templates adds changes to 
-  // the HumanModel, Mannequin, Scaling etc. to allow 
-  // for the GM foot model.
-  GM_FOOT_Mixin GMFootMixin = {
-    
-  };
+  /// This class templates adds changes to 
+  /// the HumanModel, Mannequin, Scaling etc. to allow 
+  /// for the GM foot model.
+  GM_FOOT_Mixin GMFootMixin = {};
      
 
   BodyModel = {

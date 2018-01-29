@@ -15,7 +15,7 @@ TLEM 2.1 model without duplicating the entire lower extremity model unnecessaril
 TODO: 
 =====
 
-#. Validate and test new Ankle joint location.
+#. Validate new Ankle joint location, and ankle ligament insertions
 
 #. Align scaling between foot and Leg (TLEM2).
 
@@ -29,11 +29,9 @@ TODO:
 Usage: 
 =============
 
-This implmentation only works with the TLEM 2 leg model and it requires that
-the existing feet and lower leg muscles are disabled with the following setting:
-``#define BM_FOOT_MODEL _FOOT_MODEL_NONE_``. 
 
-.. note:: This switch is only available in AMMR 2.0.1 or later.
+.. note:: This implmentation only works with the TLEM 2 leg model, and requires a few 
+          features which is only available in AMMR 2.0.1 or later. 
 
 To use the GM foot model the file ``GM_Foot_libdef.any`` must be included before 
 the first ``Main`` statement. 
@@ -45,14 +43,11 @@ the first ``Main`` statement.
 
     Main = {
 
-        // Required for using th GM foot model
-        #define BM_LEG_MODEL _LEG_MODEL_TLEM2_
-        #define BM_FOOT_MODEL _FOOT_MODEL_NONE_
+        // Add body model configuration. E.g.
+        #define BM_ARM_RIGHT OFF
+        #define BM_ARM_LEFT OFF
         
-        // Include the HumNModel
-        #include "<ANYBODY_PATH_BODY>/HumanModel.any"
-
-        // Include the GM foot model after the HumanModel.any
+        // Include the GM foot model. It handles inlcuding the human model as well.
         #include "<GM_FOOT_PATH>/GM_foot_model.any"
 
 
