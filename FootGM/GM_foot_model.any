@@ -11,6 +11,7 @@ HumanModel =
      
 
   BodyModel = {
+    #if BM_LEG_RIGHT
     Right = {
       #ifdef SignRef
         #undef SignRef
@@ -21,8 +22,10 @@ HumanModel =
       #include "GM_foot.root.any"
     
       #undef _LEFT_RIGHT_
-   }; // Right
+    }; // Right
+    #endif
    
+    #if BM_LEG_LEFT
     Left = {
       #ifdef SignRef
         #undef SignRef
@@ -33,7 +36,8 @@ HumanModel =
       #include "GM_foot.root.any"
     
       #undef _LEFT_RIGHT_
-   }; // Left
+    }; // Left
+    #endif
 
  }; // BodyModel
 

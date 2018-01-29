@@ -15,9 +15,15 @@ TLEM 2.1 model without duplicating the entire lower extremity model unnecessaril
 TODO: 
 =====
 
-2. Fix Ankle ligaments and Ankle joint location
+#. Validate and test new Ankle joint location.
 
-4. Test and Validate results
+#. Align scaling between foot and Leg (TLEM2).
+
+#. Fix Free posture example application.
+
+#. Add GM foot example based on AnyMoCap.
+
+#. Test and Validate results.
 
 
 Usage: 

@@ -1,6 +1,13 @@
 
 #path GM_FOOT_PATH "."
 
+
+// This disables the Ankle joint of the TLEM2 model 
+// so the FootGM model can redfine the position.
+#define BM_JOINT_TYPE_ANKLE_RIGHT 0
+#define BM_JOINT_TYPE_ANKLE_LEFT 0
+
+
 // Class template for adding the GM foot modifications to 
 // HumanModel setup.
 #class_template GM_FOOT_Mixin {
