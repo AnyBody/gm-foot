@@ -2,26 +2,32 @@ Glasgow-Maastricht Foot Model
 #############################
 
 This is a work in progress to reimplement the Glasgow-Maastricht (GM) Foot Model
-with the TLEM 2.1 lower extremity model int he AnyBody Managed Model Repository
-(AMMR) version 2.0.1.
+with the TLEM 2.1 lower extremity model. The old implementation of the GM foot
+model required its own modified implementation of the TLEM1 lower extremity
+model. This was a nightmare to maintain and made it impossible to use the model
+with new TLEM 2.1 model.
 
-The old implementation of the GM foot model required its own modified
-implementation of the TLEM1 lower extremity model. This was a nightmare to
-maintain and made it impossible to use the model with new TLEM 2.1 model.
+.. figure:: Tests/GM_foot.gif
+  :align: center
 
 The goal is to restructure the GM foot model to integrate nicely into the TLEM
-2.1 model without duplicating the entire lower extremity model unnecessarily.
+2.1 model without duplicating the entire lower extremity model unnecessarily. We
+are sharing the model on GitHub to give everyone early access to the model and
+allow for users to help improve and test the model. 
 
+We plan to re-integrate the GM foot model with the AMMR once it is sufficiently
+stable and well tested. 
 
-.. image:: Tests/GM_foot.gif
 
 
 TODO: 
 =====
 
-#. Validate new Ankle joint location, and ankle ligament insertions
+#. Adjust (and validate) the new Ankle joint location, and ankle ligament insertions
 
 #. Align scaling between foot and Leg (TLEM2).
+
+#. Recrate the Joint moments measures with the new foot.
 
 #. Fix Free posture example application.
 
@@ -32,7 +38,6 @@ TODO:
 
 Usage: 
 =============
-
 
 .. note:: This implmentation only works with the TLEM 2 leg model, and requires a few 
           features which is only available in AMMR 2.0.1 or later. 
@@ -55,4 +60,4 @@ the first ``Main`` statement.
         #include "<GM_FOOT_PATH>/GM_foot_model.any"
 
 
-See :file:`test_main.any` for an example of including the GM foot. 
+See :file:`Tests/test_footGM.any` for an example of including the GM foot. 
