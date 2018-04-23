@@ -1,1 +1,10 @@
-#include "../libdef.any"
+// To use specific AMMR repository place a "libdef.any" in the parent directory
+// with the following content "#include "path/to/ammr/libdef.any"
+// If no "libdef.any" is found in the parent directory the model will use the 
+// readonly AMMR in the install directorty.
+
+#ifpathexists "../libdef.any"
+  #include "../libdef.any"
+#else
+  #include "<ANYBODY_PATH_INSTALLDIR>/AMMR/libdef.any"
+#endif
