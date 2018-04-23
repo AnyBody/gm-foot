@@ -3,6 +3,39 @@
 //the right and left side
 
 
+AnyKinMeasureLinComb AnklePlantarFlexion = {
+  AnyKinRotational RotMeasure = {
+    Type=RotAxesAngles;
+    Axis1 = z; Axis2 = x; Axis3 = y; 
+    AnyRefNode &ShankNode = ...Seg.Shank.AnkleJoint;
+    AnyRefNode &FootNode  = ...Seg.Talus.AnkleJoint;
+  };
+  Coef = {{-1,0,0}};
+  OutDim = 1;
+};
+
+AnyKinMeasureOrg SubTalarEversion={
+  
+  AnyFolder &Talus = ..Seg.Talus.SubTalarJoint;
+  Talus ={
+    AnyRefNode RotNode={
+      ARel={{0,....Sign*-1,0},{....Sign*1,0,0},{0,0,1}};
+    };
+  };
+  AnyFolder &Foot = ..Seg.Foot.SubTalarJoint;
+  Foot ={
+    AnyRefNode RotNode={
+      ARel={{....Sign*1,0,0},{0,....Sign*1,0},{0,0,1}};
+    };
+  };
+  AnyKinRotational Ankle = {
+    Type=RotAxesAngles;
+    AnyRefNode &TalusNode = ...Seg.Talus.SubTalarJoint;
+    AnyRefNode &SubTalarNode  = ...Seg.Foot.SubTalarJoint;
+   
+  }; // End of SubTalar
+  MeasureOrganizer={0};
+};
 
 
 
