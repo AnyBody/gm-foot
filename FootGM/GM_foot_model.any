@@ -8,6 +8,7 @@ HumanModel =
   /// This class templates adds changes to 
   /// the HumanModel, Mannequin, Scaling etc. to allow 
   /// for the GM foot model.
+  /// #include "GM_foot_templates.any"
   GM_FOOT_Mixin GMFootMixin = {};
      
 
