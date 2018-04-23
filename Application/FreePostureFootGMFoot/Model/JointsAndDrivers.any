@@ -28,51 +28,32 @@ AnyFolder Drivers = {
   #ifdef UNHALLOWED_COMBINATION
   #else
   
-  #if TRUNK == 1
   #include "TrunkDrivers.any"
-  #else
-  #endif
   
   
-  #if TRUNK_NECK == 1
-  #include "TrunkNeckDrivers.any"
-  #else
-  #endif
-
-  
-  #if RIGHT_ARM == 1
-  #include "RightArmDrivers.any"
-    #if RIGHT_DETAILLED_HAND == 1
+  #if BM_ARM_RIGHT
+    #include "RightArmDrivers.any"
+    #if BM_ARM_DETAILED_HAND 
     #include "RightHandDrivers.any"
     #endif
   #else
   #endif
   
   
-  #if LEFT_ARM == 1
+  #if BM_ARM_LEFT
   #include "LeftArmDrivers.any"
-    #if LEFT_DETAILLED_HAND == 1
+    #if BM_ARM_DETAILED_HAND
     #include "LeftHandDrivers.any"
     #endif
   #else
   #endif
   
   
-  #if RIGHT_LEG == 1
-  #include "RightLegDrivers.any"
-  #else
-  #endif
   
   
-  #if LEFT_LEG == 1
-  #include "LeftLegDrivers.any"
-  #else
-  #endif
-  
-  
-  #if RIGHT_LEG_TD == 1
+  #if BM_LEG_RIGHT	
   #include "RightLegTDDrivers.any"
-    #if RIGHT_DETAILLED_FOOT ==1
+    #if BM_FOOT_MODEL != _FOOT_MODEL_DEFAULT_
     #include "RightFootDrivers.any"
 //    #include "RightFootDriversRhythm.any"
     #endif
@@ -80,9 +61,9 @@ AnyFolder Drivers = {
   #endif
   
   
-  #if LEFT_LEG_TD == 1
+  #if BM_LEG_LEFT
   #include "LeftLegTDDrivers.any"
-    #if LEFT_DETAILLED_FOOT ==1
+    #if BM_FOOT_MODEL != _FOOT_MODEL_DEFAULT_
     #include "LeftFootDrivers.any"
 //    #include "LeftFootDriversRhythm.any"
     #endif

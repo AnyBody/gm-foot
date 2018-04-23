@@ -40,12 +40,16 @@
   // ************************************
   
   //Neck driver 
-  AnyKinEqSimpleDriver NeckJntDriver = {
-    AnyRevoluteJoint &T12L1Joint = ....HumanModel.BodyModel.Interface.Trunk.NeckJoint;
-    DriverPos = pi/180*{.JntPos.NeckExtension};
-    DriverVel = pi/180*{.JntVel.NeckExtension};
-    Reaction.Type = {Off};
+  AnyKinEqSimpleDriver CervicalDriver ={
+    AnyKinMeasureOrg &Ref1 = .RefHM.Interface.Trunk.SkullThoraxFlexion;  
+    AnyKinMeasureOrg &Ref2 = .RefHM.Interface.Trunk.SkullThoraxLateralBending;
+    AnyKinMeasureOrg &Ref3 = .RefHM.Interface.Trunk.SkullThoraxRotation;
+    DriverPos = pi/180*{0, 90, 0}; //90 because mandible skull has different orientation than normal skull.
+    DriverVel = pi/180*{0, 0, 0};
+    Reaction.Type = {Off, Off, Off};  
   };
+  
+
   
   //Thorax pelvis rotation driver
   AnyKinEqSimpleDriver PostureDriver ={
