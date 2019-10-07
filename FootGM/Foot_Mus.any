@@ -22,28 +22,47 @@ AnyViaPointMuscle AbductorHallucis =
   AnyRefFrame &Via2 = .Segments.Metatarsal1.ABDH_Via; //MT1
   AnyRefFrame &Ins = .Segments.ProximalPhalange1.ABDH_Ins; // proxi1
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
-AnyViaPointMuscle FlexorHallucisBrevisLateralis = 
+AnyViaPointMuscle FlexorHallucisBrevisLateralis_1 = 
 {
-  AnyMuscleModel &MusMdl = ..MusPar.FlexorHallucisBrevisLateralis;
-  AnyRefFrame &Org =. Segments.Navicular.FHBL_Org;  // Navi (or cuboid?)
+  AnyMuscleModel &MusMdl = ..MusPar.FlexorHallucisBrevisLateralis_1;
+  AnyRefFrame &Org =. Segments.Cuboid.FHBL_Org;  //sarrafian et al "anatomy of the foot and ankle" pp.267
+
   AnyRefFrame &Via = .Segments.Metatarsal1.FHBL_Via; //MT1
   AnyRefFrame &Via2 = .Segments.Metatarsal1.FHBL_Via2; //MT1
   AnyRefFrame &Ins = .Segments.ProximalPhalange1.FHBL_Ins; // proxi1
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
+
+AnyViaPointMuscle FlexorHallucisBrevisLateralis_2 = 
+{
+  AnyMuscleModel &MusMdl = ..MusPar.FlexorHallucisBrevisLateralis_2;
+  AnyRefFrame &Org =. Segments.LateralCuneiform.FHBL_Org;  //sarrafian et al "anatomy of the foot and ankle" pp.267
+  AnyRefFrame &Via = .Segments.Metatarsal1.FHBL_Via; //MT1
+  AnyRefFrame &Via2 = .Segments.Metatarsal1.FHBL_Via2; //MT1
+  AnyRefFrame &Ins = .Segments.ProximalPhalange1.FHBL_Ins; // proxi1
+  AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
+};
+
+
 
 
 AnyViaPointMuscle FlexorHallucisBrevisMedialis = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.FlexorHallucisBrevisMedialis;
-  AnyRefFrame &Org =. Segments.Navicular.FHBM_Org;  // Navi (or cuboid?)
+  //AnyRefFrame &Org =. Segments.Navicular.FHBM_Org;  // Navi (or cuboid?)
+  AnyRefFrame &Org =. Segments.MedialCuneiform.FHBM_Org;  // Navi (or cuboid?)
+
   AnyRefFrame &Via = .Segments.Metatarsal1.FHBM_Via; //MT1
   AnyRefFrame &Via2 = .Segments.Metatarsal1.FHBM_Via2; //MT1
   AnyRefFrame &Ins = .Segments.ProximalPhalange1.FHBM_Ins; // proxi1
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -54,6 +73,7 @@ AnyViaPointMuscle AdductorHallucisOblique1 =
   AnyRefFrame &Via = .Segments.Metatarsal1.ADHO_Via; //MT1
   AnyRefFrame &Ins = .Segments.ProximalPhalange1.ADHO_Ins; // proxi1
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle AdductorHallucisOblique2 = 
@@ -63,6 +83,7 @@ AnyViaPointMuscle AdductorHallucisOblique2 =
   AnyRefFrame &Via = .Segments.Metatarsal1.ADHO_Via; //MT1
   AnyRefFrame &Ins = .Segments.ProximalPhalange1.ADHO_Ins; // proxi1
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle AdductorHallucisOblique3 = 
@@ -72,6 +93,28 @@ AnyViaPointMuscle AdductorHallucisOblique3 =
   AnyRefFrame &Via = .Segments.Metatarsal1.ADHO_Via; //MT1
   AnyRefFrame &Ins = .Segments.ProximalPhalange1.ADHO_Ins; // proxi1
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
+};
+
+AnyViaPointMuscle AdductorHallucisOblique4 = 
+{
+  AnyMuscleModel &MusMdl = ..MusPar.AdductorHallucisOblique4;
+  AnyRefFrame &Org = .Segments.Cuboid.ADHO_Org4;  // base of MT2, MT3, MT4 according to Takamitsu    sarrafian adds cuboid and cuneiforms
+  AnyRefFrame &Via = .Segments.Metatarsal1.ADHO_Via; //MT1
+  AnyRefFrame &Ins = .Segments.ProximalPhalange1.ADHO_Ins; // proxi1
+  AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
+};
+
+
+AnyViaPointMuscle AdductorHallucisOblique5 = 
+{
+  AnyMuscleModel &MusMdl = ..MusPar.AdductorHallucisOblique5;
+  AnyRefFrame &Org = .Segments.LateralCuneiform.ADHO_Org5; // base of MT2, MT3, MT4 according to Takamitsu    sarrafian adds cuboid and cuneiforms
+  AnyRefFrame &Via = .Segments.Metatarsal1.ADHO_Via; //MT1
+  AnyRefFrame &Ins = .Segments.ProximalPhalange1.ADHO_Ins; // proxi1
+  AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -83,6 +126,7 @@ AnyViaPointMuscle AdductorHallucisTransverse1 =
   AnyRefFrame &Via = .Segments.Metatarsal1.ADHT_Via; //MT1
   AnyRefFrame &Ins = .Segments.ProximalPhalange1.ADHT_Ins; // proxi1
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -93,6 +137,7 @@ AnyViaPointMuscle AdductorHallucisTransverse2 =
   AnyRefFrame &Via = .Segments.Metatarsal1.ADHT_Via; //MT1
   AnyRefFrame &Ins = .Segments.ProximalPhalange1.ADHT_Ins; // proxi1
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -106,6 +151,7 @@ AnyViaPointMuscle AdductorHallucisTransverse3 =
   AnyRefFrame &Via = .Segments.Metatarsal1.ADHT_Via; //MT1
   AnyRefFrame &Ins = .Segments.ProximalPhalange1.ADHT_Ins; // proxi1
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -120,58 +166,8 @@ AnyViaPointMuscle ExtensorHallucisBrevis =
   AnyRefFrame &Ins1 = .Segments.Metatarsal1.EHB_Ins1; // MT1
   AnyRefFrame &Ins2 = .Segments.ProximalPhalange1.EHB_Ins2; // proxi 1
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
-
-
-
-
-
-
-//This one is modified according to Takamitsu and moved to MT2, MT3, MT4.
-
-//Segments.LateralCuneiform.MusclesRefFrame = {
-//  AnyRefNode ADHO_Org = {
-//    sRel = (({0.02719, 0.08696, -0.00977}*...MuscleRefFrameTransformation.CalcaneusMusRefAxes'*...MuscleRefFrameTransformation.LateralCuneiformMusRefAxes) + (...MuscleRefFrameTransformation.CalcaneusMusRefr-...MuscleRefFrameTransformation.LateralCuneiformMusRefr)*...MuscleRefFrameTransformation.LateralCuneiformMusRefAxes)*.Mirror*.MusScaleMat*..ScaleMat;
-//    AnyDrawNode drw = {
-//      ScaleXYZ = 0.0016*{1,1,1};
-//      RGB = {0,0,1};
-//    };
-//  };
-//};//LateralCuneiform
-
-
-
-
-//Modified according to Takamitsu
-
-//Segments.Metatarsal3.MusclesRefFrame = {
-//  AnyRefNode ADHT_Org1 = {
-//    sRel = (({0.00137, 0.1358, -0.00917}*...MuscleRefFrameTransformation.CalcaneusMusRefAxes'*...MuscleRefFrameTransformation.Metatarsal3MusRefAxes) + (...MuscleRefFrameTransformation.CalcaneusMusRefr-...MuscleRefFrameTransformation.Metatarsal3MusRefr)*...MuscleRefFrameTransformation.Metatarsal3MusRefAxes)*.Mirror*.MusScaleMat*..ScaleMat;
-//    AnyDrawNode drw = {
-//      ScaleXYZ = 0.0016*{1,1,1};
-//      RGB = {0,0,1};
-//    };
-//  };
-//};//Metatarsal3
-//
-//Segments.Metatarsal4.MusclesRefFrame = {
-//  AnyRefNode ADHT_Org2 = {
-//    sRel = (({0.00016, 0.13128, -0.01362}*...MuscleRefFrameTransformation.CalcaneusMusRefAxes'*...MuscleRefFrameTransformation.Metatarsal4MusRefAxes) + (...MuscleRefFrameTransformation.CalcaneusMusRefr-...MuscleRefFrameTransformation.Metatarsal4MusRefr)*...MuscleRefFrameTransformation.Metatarsal4MusRefAxes)*.Mirror*.MusScaleMat*..ScaleMat;
-//    AnyDrawNode drw = {
-//      ScaleXYZ = 0.0016*{1,1,1};
-//      RGB = {0,0,1};
-//    };
-//  };
-//};//Metatarsal4
-
-  
-  
-
-
-
-
-
-
 
 //*********************************
 //DI, origins are strange, reviewed
@@ -183,6 +179,7 @@ AnyViaPointMuscle DorsalInterosseous1Part1 =
   AnyRefFrame &Org = .Segments.Metatarsal2.DI1_Org1;
   AnyRefFrame &Ins = .Segments.ProximalPhalange2.DI1_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -192,6 +189,7 @@ AnyViaPointMuscle DorsalInterosseous1Part2 =
   AnyRefFrame &Org = .Segments.Metatarsal1.DI1_Org2;
   AnyRefFrame &Ins = .Segments.ProximalPhalange2.DI1_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -201,6 +199,7 @@ AnyViaPointMuscle DorsalInterosseous2Part1 =
   AnyRefFrame &Org = .Segments.Metatarsal2.DI2_Org1;
   AnyRefFrame &Ins = .Segments.ProximalPhalange2.DI2_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -210,6 +209,7 @@ AnyViaPointMuscle DorsalInterosseous2Part2 =
   AnyRefFrame &Org = .Segments.Metatarsal3.DI2_Org2;
   AnyRefFrame &Ins = .Segments.ProximalPhalange2.DI2_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -219,6 +219,7 @@ AnyViaPointMuscle DorsalInterosseous3Part1 =
   AnyRefFrame &Org = .Segments.Metatarsal3.DI3_Org1;
   AnyRefFrame &Ins = .Segments.ProximalPhalange3.DI3_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -228,6 +229,7 @@ AnyViaPointMuscle DorsalInterosseous3Part2 =
   AnyRefFrame &Org = .Segments.Metatarsal4.DI3_Org2;
   AnyRefFrame &Ins = .Segments.ProximalPhalange3.DI3_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle DorsalInterosseous4Part1 = 
@@ -236,6 +238,7 @@ AnyViaPointMuscle DorsalInterosseous4Part1 =
   AnyRefFrame &Org = .Segments.Metatarsal4.DI4_Org1;
   AnyRefFrame &Ins = .Segments.ProximalPhalange4.DI4_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 //Not present in yamaguchi data, but should be there
@@ -245,82 +248,13 @@ AnyViaPointMuscle DorsalInterosseous4Part2 =
   AnyRefFrame &Org = .Segments.Metatarsal5.DI4_Org2;
   AnyRefFrame &Ins = .Segments.ProximalPhalange4.DI4_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
   
   
   
-    //Original location for the origin
-    //*********************************
-//  AnyRefNode DI1_Org1 = {
-//    sRel = {0.03196, 0.10347, .....Sign*-0.00072}*.MusScaleMat*..ScaleMat;
-//    AnyDrawNode drw = {
-//      ScaleXYZ = 0.0016*{1,1,1};
-//      RGB = {0,0,1};
-//    };
-//  };
-//  
-//  AnyRefNode DI1_Org2 = {
-//    sRel = {0.04572, 0.10431, .....Sign*0.00051}*.MusScaleMat*..ScaleMat;
-//    AnyDrawNode drw = {
-//      ScaleXYZ = 0.0016*{1,1,1};
-//      RGB = {0,0,1};
-//    };
-//  };
-  
-//  AnyRefNode DI2_Org1 = {
-//    sRel = {0.03143, 0.10348, .....Sign*-0.00374}*.MusScaleMat*..ScaleMat;
-//    AnyDrawNode drw = {
-//      ScaleXYZ = 0.0016*{1,1,1};
-//      RGB = {0,0,1};
-//    };
-//  };
-//  
-//  AnyRefNode DI2_Org2 = {
-//    sRel = {0.0415, 0.10554, .....Sign*-0.00929}*.MusScaleMat*..ScaleMat;
-//    AnyDrawNode drw = {
-//      ScaleXYZ = 0.0016*{1,1,1};
-//      RGB = {0,0,1};
-//    };
-//  };
-  
-//  AnyRefNode DI3_Org1 = {
-//    sRel = {0.02119, 0.09567, .....Sign*-0.01540}*.MusScaleMat*..ScaleMat;
-//    AnyDrawNode drw = {
-//      ScaleXYZ = 0.0016*{1,1,1};
-//      RGB = {0,0,1};
-//    };
-//  };
-//  
-//  AnyRefNode DI3_Org2 = {
-//    sRel = {0.02742, 0.10402, .....Sign*-0.02451}*.MusScaleMat*..ScaleMat;
-//    AnyDrawNode drw = {
-//      ScaleXYZ = 0.0016*{1,1,1};
-//      RGB = {0,0,1};
-//    };
-//  };
-  
-//  AnyRefNode DI4_Org1 = {
-//    sRel = {0.01809, 0.08484, .....Sign*-0.02834}*.MusScaleMat*..ScaleMat;
-//    AnyDrawNode drw = {
-//      ScaleXYZ = 0.0016*{1,1,1};
-//      RGB = {0,0,1};
-//    };
-//  };
-  
-  
-  
-  
-  //Modified origins (graphicaly adjusted)
-  //**************************************
-  
-
-
-
-
-
-
-
+    
 
 
 // insertion in tendon of longus, should be same path as longus until distal phalanx
@@ -328,6 +262,19 @@ AnyViaPointMuscle DorsalInterosseous4Part2 =
 //ExtensorDigitoriumBrevis
 //*************************
 
+//AnyViaPointMuscle ExtensorDigitoriumBrevis2 = 
+//{
+//  AnyMuscleModel &MusMdl = ..MusPar.ExtensorDigitoriumBrevis2;
+//  AnyRefFrame &Org = .Segments.Calcaneus.EDB_Org; // calca
+//  AnyRefFrame &Via1 = .Segments.Metatarsal3.EDB2_Via1; //MT3
+//  AnyRefFrame &Via2Bis = .Segments.Metatarsal2.EDB2_Via2Bis; //MT2
+//  AnyRefFrame &Via2 = .Segments.Metatarsal2.EDB2_Via2; //MT2
+////  AnyRefFrame &Via3 = .Segments.ProximalPhalange2.EDB2_Via3; //proxi2
+////  AnyRefFrame &Via4 = .Segments.MiddlePhalange2.EDB2_Via4; //midle 2 tendon
+////  AnyRefFrame &Ins = .Segments.DistalPhalange2.EDB2_Ins; //distal phalanx2
+//  AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+//  #include "MuscleForceDrawing.any"
+//};
 AnyViaPointMuscle ExtensorDigitoriumBrevis2 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.ExtensorDigitoriumBrevis2;
@@ -335,13 +282,29 @@ AnyViaPointMuscle ExtensorDigitoriumBrevis2 =
   AnyRefFrame &Via1 = .Segments.Metatarsal3.EDB2_Via1; //MT3
   AnyRefFrame &Via2Bis = .Segments.Metatarsal2.EDB2_Via2Bis; //MT2
   AnyRefFrame &Via2 = .Segments.Metatarsal2.EDB2_Via2; //MT2
-//  AnyRefFrame &Via3 = .Segments.ProximalPhalange2.EDB2_Via3; //proxi2
-//  AnyRefFrame &Via4 = .Segments.MiddlePhalange2.EDB2_Via4; //midle 2 tendon
+  AnyRefFrame &ins =.Segments.MiddlePhalange2.ExtensorDigitorumLongusNode;
+  //AnyRefFrame &Via3 = .Segments.ProximalPhalange2.EDB2_Via3; //proxi2
+  //AnyRefFrame &Via4 = .Segments.MiddlePhalange2.EDB2_Via4; //midle 2 tendon
 //  AnyRefFrame &Ins = .Segments.DistalPhalange2.EDB2_Ins; //distal phalanx2
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+  #include "MuscleForceDrawing.any"
 };
 
 
+//AnyViaPointMuscle ExtensorDigitoriumBrevis3 = 
+//{
+//  AnyMuscleModel &MusMdl = ..MusPar.ExtensorDigitoriumBrevis3;
+//  AnyRefFrame &Org = .Segments.Calcaneus.EDB_Org; // calca
+//  AnyRefFrame &Via0 = .Segments.Metatarsal3.EDB3_Via0; //MT3
+//  AnyRefFrame &Via1Bis = .Segments.Metatarsal3.EDB3_Via1Bis; //MT3
+//  AnyRefFrame &Via1 = .Segments.Metatarsal3.EDB3_Via1; //MT3
+////  AnyRefFrame &Via2 = .Segments.ProximalPhalange3.EDB3_Via2; //proxi3
+////  AnyRefFrame &Via3 = .Segments.MiddlePhalange3.EDB3_Via3; //middle 3 tendon
+////  AnyRefFrame &Ins = .Segments.DistalPhalange3.EDB3_Ins; //distal phalanx3
+//  AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+//   #include "MuscleForceDrawing.any"
+//
+//};
 AnyViaPointMuscle ExtensorDigitoriumBrevis3 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.ExtensorDigitoriumBrevis3;
@@ -349,12 +312,29 @@ AnyViaPointMuscle ExtensorDigitoriumBrevis3 =
   AnyRefFrame &Via0 = .Segments.Metatarsal3.EDB3_Via0; //MT3
   AnyRefFrame &Via1Bis = .Segments.Metatarsal3.EDB3_Via1Bis; //MT3
   AnyRefFrame &Via1 = .Segments.Metatarsal3.EDB3_Via1; //MT3
-//  AnyRefFrame &Via2 = .Segments.ProximalPhalange3.EDB3_Via2; //proxi3
-//  AnyRefFrame &Via3 = .Segments.MiddlePhalange3.EDB3_Via3; //middle 3 tendon
+  AnyRefFrame &ins =.Segments.MiddlePhalange3.ExtensorDigitorumLongusNode;
+  //  AnyRefFrame &Via2 = .Segments.ProximalPhalange3.EDB3_Via2; //proxi3
+ // AnyRefFrame &Via3 = .Segments.MiddlePhalange3.EDB3_Via3; //middle 3 tendon
 //  AnyRefFrame &Ins = .Segments.DistalPhalange3.EDB3_Ins; //distal phalanx3
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+   #include "MuscleForceDrawing.any"
+
 };
 
+
+//AnyViaPointMuscle ExtensorDigitoriumBrevis4 = 
+//{
+//  AnyMuscleModel &MusMdl = ..MusPar.ExtensorDigitoriumBrevis4;
+//  AnyRefFrame &Org = .Segments.Calcaneus.EDB_Org; // calca
+//  AnyRefFrame &Via1Bis = .Segments.Metatarsal4.EDB4_Via1Bis; //MT4
+//  AnyRefFrame &Via1 = .Segments.Metatarsal4.EDB4_Via1; //MT4
+////  AnyRefFrame &Via2 = .Segments.ProximalPhalange4.EDB4_Via2; //proxi4
+////  AnyRefFrame &Via3 = .Segments.MiddlePhalange4.EDB4_Via3; //middle 4 tendon
+////  AnyRefFrame &Ins = .Segments.DistalPhalange4.EDB4_Ins; //distal phalanx4
+//  AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+// #include "MuscleForceDrawing.any"
+//};
+//
 
 AnyViaPointMuscle ExtensorDigitoriumBrevis4 = 
 {
@@ -362,93 +342,15 @@ AnyViaPointMuscle ExtensorDigitoriumBrevis4 =
   AnyRefFrame &Org = .Segments.Calcaneus.EDB_Org; // calca
   AnyRefFrame &Via1Bis = .Segments.Metatarsal4.EDB4_Via1Bis; //MT4
   AnyRefFrame &Via1 = .Segments.Metatarsal4.EDB4_Via1; //MT4
-//  AnyRefFrame &Via2 = .Segments.ProximalPhalange4.EDB4_Via2; //proxi4
-//  AnyRefFrame &Via3 = .Segments.MiddlePhalange4.EDB4_Via3; //middle 4 tendon
+   AnyRefFrame &ins =.Segments.MiddlePhalange4.ExtensorDigitorumLongusNode;
+  // AnyRefFrame &Via2 = .Segments.ProximalPhalange4.EDB4_Via2; //proxi4
+ // AnyRefFrame &Via3 = .Segments.MiddlePhalange4.EDB4_Via3; //middle 4 tendon
 //  AnyRefFrame &Ins = .Segments.DistalPhalange4.EDB4_Ins; //distal phalanx4
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
-
-
-
-//Those insertion and via points replace the original ones in order to simulate the longus tenton insertion.
-
-
-//Segments.ProximalPhalange2 = {
-//  AnyRefNode EDB2_Via3 = {
-//    sRel = .ExtensorDigitorumLongusViaNode7.sRel;
-//  };
-//};
-//
-//Segments.MiddlePhalange2 = {
-//  AnyRefNode EDB2_Via4 = {
-//    sRel = .ExtensorDigitorumLongusViaNode8.sRel;
-//  };
-//  
-//  AnyRefNode EDB2_Ins = {
-//    sRel = .ExtensorDigitorumLongusNode.sRel;
-//  };
-//};
-//
-//Segments.DistalPhalange2 = {
-//  AnyRefNode EDB2_Ins = {
-//    sRel = .ExtensorDigitorumLongusNode.sRel;
-//  };
-//};
-
-
-
-
-//Segments.ProximalPhalange3 = {
-//  AnyRefNode EDB3_Via2 = {
-//    sRel = .ExtensorDigitorumLongusViaNode10.sRel;
-//  };
-//};
-//
-//Segments.MiddlePhalange3 = {
-//  AnyRefNode EDB3_Via3 = {
-//    sRel = .ExtensorDigitorumLongusViaNode11.sRel;
-//  };
-//  
-//  AnyRefNode EDB3_Ins = {
-//    sRel = .ExtensorDigitorumLongusNode.sRel;
-//  };
-//};
-//
-//Segments.DistalPhalange3 = {
-//  AnyRefNode EDB3_Ins = {
-//    sRel = .ExtensorDigitorumLongusNode.sRel;
-//  };
-//};
-
-
-
-
-//Segments.ProximalPhalange4 = {
-//  AnyRefNode EDB4_Via2 = {
-//    sRel = .ExtensorDigitorumLongusViaNode13.sRel;
-//  };
-//};
-//
-//Segments.MiddlePhalange4 = {
-//  AnyRefNode EDB4_Via3 = {
-//    sRel = .ExtensorDigitorumLongusViaNode14.sRel;
-//  };
-//  
-//  AnyRefNode EDB4_Ins = {
-//    sRel = .ExtensorDigitorumLongusNode.sRel;
-//  };
-//};
-//
-//Segments.DistalPhalange4 = {
-//  AnyRefNode EDB4_Ins = {
-//    sRel = .ExtensorDigitorumLongusNode.sRel;
-//  };
-//};
-
-
-  
   
 
 
@@ -463,9 +365,11 @@ AnyViaPointMuscle ExtensorDigitoriumBrevis4 =
 AnyViaPointMuscle PlantarInterosseous1 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.PlantarInterosseous1;
-  AnyRefFrame &Org = .Segments.Metatarsal3.PI1_Org;
-  AnyRefFrame &Ins = .Segments.ProximalPhalange3.PI1_Ins;
+//  AnyRefFrame &Org = .Segments.Metatarsal3.PI1_Org;
+  AnyRefFrame &Org = .Segments.LateralCuneiform.PI1_Org;
+AnyRefFrame &Ins = .Segments.ProximalPhalange3.PI1_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle PlantarInterosseous2Part1 = 
@@ -474,6 +378,7 @@ AnyViaPointMuscle PlantarInterosseous2Part1 =
   AnyRefFrame &Org = .Segments.Metatarsal4.PI2_Org1;
   AnyRefFrame &Ins = .Segments.ProximalPhalange4.PI2_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle PlantarInterosseous2Part2 = 
@@ -482,15 +387,18 @@ AnyViaPointMuscle PlantarInterosseous2Part2 =
   AnyRefFrame &Org = .Segments.Metatarsal4.PI2_Org2;
   AnyRefFrame &Ins = .Segments.ProximalPhalange4.PI2_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
 AnyViaPointMuscle PlantarInterosseous2Part3 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.PlantarInterosseous2Part3;
-  AnyRefFrame &Org = .Segments.Metatarsal4.PI2_Org3;
-  AnyRefFrame &Ins = .Segments.ProximalPhalange4.PI2_Ins;
+//  AnyRefFrame &Org = .Segments.Metatarsal4.PI2_Org3;
+  AnyRefFrame &Org = .Segments.Cuboid.PI2_Org3;
+AnyRefFrame &Ins = .Segments.ProximalPhalange4.PI2_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -500,15 +408,17 @@ AnyViaPointMuscle PlantarInterosseous3Part1 =
   AnyRefFrame &Org = .Segments.Metatarsal5.PI3_Org1;
   AnyRefFrame &Ins = .Segments.ProximalPhalange5.PI3_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
 AnyViaPointMuscle PlantarInterosseous3Part2 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.PlantarInterosseous3Part2;
-  AnyRefFrame &Org = .Segments.Metatarsal5.PI3_Org2;
-  AnyRefFrame &Ins = .Segments.ProximalPhalange5.PI3_Ins;
+  AnyRefFrame &Org = .Segments.Cuboid.PI3_Org2;
+ AnyRefFrame &Ins = .Segments.ProximalPhalange5.PI3_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -518,6 +428,7 @@ AnyViaPointMuscle PlantarInterosseous3Part3 =
   AnyRefFrame &Org = .Segments.Metatarsal5.PI3_Org3;
   AnyRefFrame &Ins = .Segments.ProximalPhalange5.PI3_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
   
@@ -538,22 +449,24 @@ AnyViaPointMuscle FlexorDigitorumBrevis2 =
 {
   AnyMuscleModel &MusMdl = ..MusPar.FlexorDigitorumBrevis2;
   AnyRefFrame &Org = .Segments.Calcaneus.FDB_Org; //calca
-  AnyRefFrame &Via1 = .Segments.Cuboid.FDB2_Via1; //cuboid
+//  AnyRefFrame &Via1 = .Segments.Cuboid.FDB2_Via1; //cuboid
   AnyRefFrame &Via2 = .Segments.Metatarsal2.FDB2_Via2; //MT2
   AnyRefFrame &Via3 = .Segments.ProximalPhalange2.FDB2_Via3; //proxi 2
   AnyRefFrame &Ins = .Segments.MiddlePhalange2.FDB2_Ins; //midle p2
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle FlexorDigitorumBrevis3 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.FlexorDigitorumBrevis3;
   AnyRefFrame &Org = .Segments.Calcaneus.FDB_Org;//calca
-  AnyRefFrame &Via1 = .Segments.Cuboid.FDB3_Via1; //cuboid
+ // AnyRefFrame &Via1 = .Segments.Cuboid.FDB3_Via1; //cuboid
   AnyRefFrame &Via2 = .Segments.Metatarsal3.FDB3_Via2; //MT3
   AnyRefFrame &Via3 = .Segments.ProximalPhalange3.FDB3_Via3; //proxi 3
   AnyRefFrame &Ins = .Segments.MiddlePhalange3.FDB3_Ins; //midle p3
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -561,21 +474,23 @@ AnyViaPointMuscle FlexorDigitorumBrevis4 =
 {
   AnyMuscleModel &MusMdl = ..MusPar.FlexorDigitorumBrevis4;
   AnyRefFrame &Org = .Segments.Calcaneus.FDB_Org;//calca
-  AnyRefFrame &Via1 = .Segments.Cuboid.FDB4_Via1; //cuboid
+//  AnyRefFrame &Via1 = .Segments.Cuboid.FDB4_Via1; //cuboid
   AnyRefFrame &Via2 = .Segments.Metatarsal4.FDB4_Via2; //MT4
   AnyRefFrame &Via3 = .Segments.ProximalPhalange4.FDB4_Via3; //proxi 4
   AnyRefFrame &Ins = .Segments.MiddlePhalange4.FDB4_Ins; //midle p4
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle FlexorDigitorumBrevis5 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.FlexorDigitorumBrevis5;
   AnyRefFrame &Org = .Segments.Calcaneus.FDB_Org;//calca
-  AnyRefFrame &Via1 = .Segments.Cuboid.FDB5_Via1; //cuboid
+//  AnyRefFrame &Via1 = .Segments.Cuboid.FDB5_Via1; //cuboid
   AnyRefFrame &Via2 = .Segments.Metatarsal5.FDB5_Via2; //MT5
   AnyRefFrame &Ins = .Segments.MiddlePhalange5.FDB5_Ins; //Middle 5
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -597,48 +512,54 @@ AnyViaPointMuscle QuadratusPlantarMedialis1 =
 {
   AnyMuscleModel &MusMdl = ..MusPar.QuadratusPlantarMedialis1;
   AnyRefFrame &Org = .Segments.Calcaneus.QPM_Org1; //calca
-  AnyRefFrame &Ins = .Segments.FDLDummySeg.QP_Ins1; //tendon
+  AnyRefFrame &Ins = .FDL.FDLDummySeg.QP_Ins1; //tendon
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle QuadratusPlantarMedialis2 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.QuadratusPlantarMedialis2; 
   AnyRefFrame &Org = .Segments.Calcaneus.QPM_Org2; //calca
-  AnyRefFrame &Ins = .Segments.FDLDummySeg.QP_Ins2; //tendon
+  AnyRefFrame &Ins = .FDL.FDLDummySeg.QP_Ins2; //tendon
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle QuadratusPlantarMedialis3 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.QuadratusPlantarMedialis3; 
   AnyRefFrame &Org = .Segments.Calcaneus.QPM_Org3; //calca
-  AnyRefFrame &Ins = .Segments.FDLDummySeg.QP_Ins3; //tendon
+  AnyRefFrame &Ins = .FDL.FDLDummySeg.QP_Ins3; //tendon
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle QuadratusPlantarLateralis1 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.QuadratusPlantarLateralis1; 
   AnyRefFrame &Org = .Segments.Calcaneus.QPL_Org1; //calca
-  AnyRefFrame &Ins = .Segments.FDLDummySeg.QP_Ins1; //tendon
+  AnyRefFrame &Ins = .FDL.FDLDummySeg.QP_Ins1; //tendon
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle QuadratusPlantarLateralis2 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.QuadratusPlantarLateralis2; 
   AnyRefFrame &Org = .Segments.Calcaneus.QPL_Org2; //calca
-  AnyRefFrame &Ins = .Segments.FDLDummySeg.QP_Ins2; //tendon
+  AnyRefFrame &Ins = .FDL.FDLDummySeg.QP_Ins2; //tendon
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle QuadratusPlantarLateralis3 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.QuadratusPlantarLateralis3; 
   AnyRefFrame &Org = .Segments.Calcaneus.QPL_Org3; //calca
-  AnyRefFrame &Ins = .Segments.FDLDummySeg.QP_Ins3; //tendon
+  AnyRefFrame &Ins = .FDL.FDLDummySeg.QP_Ins3; //tendon
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -657,37 +578,41 @@ AnyViaPointMuscle QuadratusPlantarLateralis3 =
 AnyViaPointMuscle Lumbrical2 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.Lumbrical2;
-  AnyRefFrame &Org = .Segments.FDLDummySeg.LB2_Org; //tendon
+  AnyRefFrame &Org = .FDL.FDLDummySeg.LB2_Org; //tendon
   AnyRefFrame &Via = .Segments.Metatarsal2.LB2_Via; //meta2
   AnyRefFrame &Ins = .Segments.ProximalPhalange2.LB2_Ins; //proxi2
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle Lumbrical3 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.Lumbrical3;
-  AnyRefFrame &Org = .Segments.FDLDummySeg.LB3_Org; //tendon
+  AnyRefFrame &Org = .FDL.FDLDummySeg.LB3_Org; //tendon
   AnyRefFrame &Via = .Segments.Metatarsal3.LB3_Via; //meta3
   AnyRefFrame &Ins = .Segments.ProximalPhalange3.LB3_Ins; //proxi3
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle Lumbrical4 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.Lumbrical4;
-  AnyRefFrame &Org = .Segments.FDLDummySeg.LB4_Org; //tendon
+  AnyRefFrame &Org = .FDL.FDLDummySeg.LB4_Org; //tendon
   AnyRefFrame &Via = .Segments.Metatarsal4.LB4_Via; //meta4
   AnyRefFrame &Ins = .Segments.ProximalPhalange4.LB4_Ins; //proxi4
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle Lumbrical5 = 
 {
   AnyMuscleModel &MusMdl = ..MusPar.Lumbrical5;
-  AnyRefFrame &Org = .Segments.FDLDummySeg.LB5_Org; //tendon
+  AnyRefFrame &Org = .FDL.FDLDummySeg.LB5_Org; //tendon
   AnyRefFrame &Via = .Segments.Metatarsal5.LB5_Via; //meta5
   AnyRefFrame &Ins = .Segments.ProximalPhalange5.LB5_Ins; //proxi5
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -713,6 +638,7 @@ AnyViaPointMuscle AbductorDigitiMinimi1 =
   AnyRefFrame &Via2 = .Segments.Metatarsal5.ABDM_Via2; //MT5
   AnyRefFrame &Ins = .Segments.ProximalPhalange5.ABDM_Ins; //proxi5
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle AbductorDigitiMinimi2 = 
@@ -723,6 +649,7 @@ AnyViaPointMuscle AbductorDigitiMinimi2 =
   AnyRefFrame &Via2 = .Segments.Metatarsal5.ABDM_Via2; //MT5
   AnyRefFrame &Ins = .Segments.ProximalPhalange5.ABDM_Ins; //proxi5
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 AnyViaPointMuscle AbductorDigitiMinimi3 = 
@@ -733,6 +660,7 @@ AnyViaPointMuscle AbductorDigitiMinimi3 =
   AnyRefFrame &Via2 = .Segments.Metatarsal5.ABDM_Via2; //MT5
   AnyRefFrame &Ins = .Segments.ProximalPhalange5.ABDM_Ins; //proxi5
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
@@ -752,10 +680,38 @@ AnyViaPointMuscle FlexorDigitiMinimiBrevis =
   AnyRefFrame &Via = .Segments.Metatarsal5.FDMB_Via;
   AnyRefFrame &Ins = .Segments.ProximalPhalange5.FDMB_Ins;
   AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+ #include "MuscleForceDrawing.any"
 };
 
 
+AnyViaPointMuscle PeroneusTertius1 = {
+  AnyMuscleModel &MusMdl = ..MusPar.PeroneusTertius1Par;
+  AnyRefNode &Org = .Segments.Shank.PeroneusTertius1Node;
+  AnyRefNode &Via1 = .Segments.Shank.PeroneusTertiusViaNode1;
+//AnyRefNode &Via3 = .Segments.Cuboid.PeroneusTertiusViaNode3;
+  AnyRefNode &Ins = .Segments.Metatarsal5.PeroneusTertius1Node;
+AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+  };
 
+
+AnyViaPointMuscle PeroneusTertius2 = {
+  AnyMuscleModel &MusMdl = ..MusPar.PeroneusTertius2Par;
+  AnyRefNode &Org = .Segments.Shank.PeroneusTertius2Node;
+  AnyRefNode &Via1 = .Segments.Shank.PeroneusTertiusViaNode1;
+//  AnyRefNode &Via3 = ..Seg.Cuboid.PeroneusTertiusViaNode3;
+  AnyRefNode &Ins = .Segments.Metatarsal5.PeroneusTertius2Node;
+AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+  };
+
+
+AnyViaPointMuscle PeroneusTertius3 = {
+  AnyMuscleModel &MusMdl = ..MusPar.PeroneusTertius3Par;
+  AnyRefNode &Org = ..Seg.Shank.PeroneusTertius3Node;
+  AnyRefNode &Via1 = ..Seg.Shank.PeroneusTertiusViaNode1;
+//  AnyRefNode &Via3 = ..Seg.Cuboid.PeroneusTertiusViaNode3;
+  AnyRefNode &Ins = ..Seg.Metatarsal5.PeroneusTertius3Node;
+AnyDrawMuscle DrwMus = {#include "<ANYBODY_PATH_BODY>/drawSettings/MusDrawSettings.any"};
+  };
 
 
 

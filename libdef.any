@@ -3,8 +3,7 @@
 // If no "libdef.any" is found in the parent directory the model will use the 
 // readonly AMMR in the install directorty.
 
-#ifpathexists "../libdef.any"
-  #include "../libdef.any"
-#else
-  #include "<ANYBODY_PATH_INSTALLDIR>/AMMR/libdef.any"
+#ifpathexists  "_pyenv"
+ #path ANYBODY_PATH_PYTHONHOME "_pyenv"
 #endif
+#include "<ANYBODY_PATH_INSTALLDIR>/ammr/libdef.any"

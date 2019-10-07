@@ -12,8 +12,8 @@
 
 
 // 27 N/cm2   Same value as in legTD (Klein Horsman)
-AnyVar StrengthMusFoot = 27*2*.StrengthScaling.Foot.StrengthScale*.....HumanModel.StrengthParameters.StrengthIndexLeg; 
-
+//AnyVar StrengthMusFoot = 27*2*.StrengthScaling.Foot.StrengthScale*.....HumanModel.StrengthParameters.StrengthIndexLeg; 
+AnyVar StrengthMusFoot =SubjectMusPar.PCSAfactor*.StrengthScaling.Foot.StrengthScale*.....HumanModel.StrengthParameters.StrengthIndexLeg;
 
 AnyMuscleModel ExtensorHallucisBrevis = {  
   AnyVar PCSA = 1.34; //cm2
@@ -207,28 +207,39 @@ AnyMuscleModel FlexorHallucisBrevisMedialis = {
 
 
 
-AnyMuscleModel FlexorHallucisBrevisLateralis = {  
-  AnyVar PCSA = 2.12; //cm2
+AnyMuscleModel FlexorHallucisBrevisLateralis_1 = {  
+  AnyVar PCSA = 0.5*2.12; //cm2
+  F0 = PCSA*.StrengthMusFoot;
+};
+AnyMuscleModel FlexorHallucisBrevisLateralis_2 = {  
+  AnyVar PCSA = 0.5*2.12; //cm2
   F0 = PCSA*.StrengthMusFoot;
 };
 
 
-
 AnyMuscleModel AdductorHallucisOblique1 = {  
-  AnyVar PCSA = 4.94/3; //cm2
+  AnyVar PCSA = 4.94/5; //cm2
   F0 = PCSA*.StrengthMusFoot;
 };
 
 AnyMuscleModel AdductorHallucisOblique2 = {  
-  AnyVar PCSA = 4.94/3; //cm2
+  AnyVar PCSA = 4.94/5; //cm2
   F0 = PCSA*.StrengthMusFoot;
 };
 
 AnyMuscleModel AdductorHallucisOblique3 = {  
-  AnyVar PCSA = 4.94/3; //cm2
+  AnyVar PCSA = 4.94/5; //cm2
   F0 = PCSA*.StrengthMusFoot;
 };
 
+AnyMuscleModel AdductorHallucisOblique4 = {  
+  AnyVar PCSA = 4.94/5; //cm2
+  F0 = PCSA*.StrengthMusFoot;
+};
+AnyMuscleModel AdductorHallucisOblique5 = {  
+  AnyVar PCSA = 4.94/5; //cm2
+  F0 = PCSA*.StrengthMusFoot;
+};
 
 AnyMuscleModel AdductorHallucisTransverse1 = {  
   AnyVar PCSA = 0.62/3; //cm2

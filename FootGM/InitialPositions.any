@@ -1,31 +1,4 @@
 
-//Seg.DummySegTaloCrural.Axes0 = 
-////Main.Model.EnvironmentModel.Tibia.Axes0*
-////Main.Model.EnvironmentModel.Tibia.AnkleJnt.ARel*
-//RotMat(.Sign*(-0.74*.JointPos.AnklePlantarFlexion-7.48)*pi/180,x);
-
-//Seg.Talus.Axes0 = 
-//Seg.DummySegTaloCrural.Axes0*
-//Seg.DummySegTaloCrural.JntTaloCrural.ARel*
-//RotMat((pi/180)*.JointPos.AnklePlantarFlexion,z)*
-//Seg.Talus.JntTaloCrural.ARel';
-
-
-//Seg.DummySegSubtalar.Axes0 =
-//Seg.Talus.Axes0*
-//Seg.Talus.JntTaloCalcaneus.ARel*
-//RotMat((pi/180)*.Sign*0.35*.JointPos.SubTalarEversion,x)*
-//Seg.DummySegSubtalar.JntTaloCalcaneus1.ARel';
-
-
-//Seg.Calcaneus.Axes0 =
-//Seg.DummySegSubtalar.Axes0*
-//Seg.DummySegSubtalar.JntTaloCalcaneus2.ARel*
-//Seg.DummySegSubtalar.JntTaloCalcaneus2.RotNode.ARel*
-//RotMat((pi/180)*.JointPos.SubTalarEversion,y)*
-//Seg.Calcaneus.JntTaloCalcaneus.RotNode.ARel'*
-//Seg.Calcaneus.JntTaloCalcaneus.ARel';
-
 
 
 //Talus

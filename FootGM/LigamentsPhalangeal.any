@@ -5,256 +5,364 @@
 //full strength in the locked position.
 
 
-AnyFolder LigamentsPhalangeal = {
+AnyFolder LigamentsPhalangealPlantar = {
+  //Ligaments stiffness is scaled together with the muscle strength so the same variable is reused.
+//  AnyVar FootLigStiffnessScale = ..StrengthScaling.Foot.StrengthScale; 
+//  AnyVar StiffnessCoeff = 0.5;
+//  AnyVar Pretension =0.98;
+  
+  //The FullStrengthAngle is taken from the toe off position during gait,
+  //this is beleived to be the extended position.
+  //StartStrengthAngle is taken 3 deg before.
+  
 
-
-
-//The FullStrengthAngle is taken from the toe off position during gait,
-//this is beleived to be the extended position.
-//StartStrengthAngle is taken 3 deg before.
-
-
-AnyFolder ProxPhDistPh1Lig = {
-  AnyViaPointMuscle Ligament = {
-    AnyMuscleModel &StrengthModel = .StrengthModel;
-    AnyRefNode &Org = ....Seg.ProximalPhalange1.PhalangealLigNode;
-    AnyRefNode &Ins = ....Seg.DistalPhalange1.PhalangealLigNode;
-    AnyDrawMuscle DrwMus = { RGB = Main.DrawSettings.Colors.Ligaments;};
+   
+   
+  
+  AnyViaPointLigament ProxPhDistPh1Lig = {
+    
+    AnyRefNode &ref1 = ...Seg.ProximalPhalange1.PhalangealLigNode;
+    AnyRefNode &ref2 = ...Seg.DistalPhalange1.PhalangealLigNode;
+    
+    
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.PlantarProxPhDistPh1Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    
+    #include "LigParms.any"
+  #include "LigDriverAndMuscle.any"
+    
+    
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
   };
   
-  AnyMuscleModelUsr1 StrengthModel = 
-  {
-    F0 = 0;
-    S = .StrengthFun(....Jnt.FootJnt.ProxPhDistPh1.Pos[0])[0];
+  
+  
+  
+  AnyViaPointLigament ProxPhMidPh2Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.ProximalPhalange2.PhalangealLigNode;
+    AnyRefNode &ref2 = ...Seg.MiddlePhalange2.PhalangealLigNodeProx;
+    
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.PlantarProxPhMidPh2Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+   #include "LigDriverAndMuscle.any"
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
   };
   
-  AnyFunInterpol StrengthFun = 
-  {
-    AnyVar Strength = 500;
-    AnyVar FullStrengthAngle = 5; //8;
-    AnyVar StartStrengthAngle = 2; //5;
-    Type = Bspline;
-    BsplineOrder = 4;
-    T = {-100, -80, -60, StartStrengthAngle-3, StartStrengthAngle-1, StartStrengthAngle+1, FullStrengthAngle-1, FullStrengthAngle, FullStrengthAngle+2, FullStrengthAngle+4, 60, 80, 100}*pi/180;
-    Data = {{0, 0, 0, 0, 0, 0, Strength, Strength, Strength, Strength, Strength, Strength, Strength}};
+  
+  
+  
+  
+  AnyViaPointLigament ProxPhMidPh3Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.ProximalPhalange3.PhalangealLigNode;
+    AnyRefNode &ref2 = ...Seg.MiddlePhalange3.PhalangealLigNodeProx;
+    
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.PlantarProxPhMidPh3Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+  #include "LigDriverAndMuscle.any"
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
   };
+  
+  
+  
+  
+  
+  AnyViaPointLigament ProxPhMidPh4Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.ProximalPhalange4.PhalangealLigNode;
+    AnyRefNode &ref2 = ...Seg.MiddlePhalange4.PhalangealLigNodeProx;
+    
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.PlantarProxPhMidPh4Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+   #include "LigDriverAndMuscle.any"
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
+  };
+  
+  
+  
+  
+  AnyViaPointLigament ProxPhMidPh5Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.ProximalPhalange5.PhalangealLigNode;
+    AnyRefNode &ref2 = ...Seg.MiddlePhalange5.PhalangealLigNodeProx;
+    
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.PlantarProxPhMidPh5Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+   #include "LigDriverAndMuscle.any"
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
+  };
+  
+  
+  
+  
+  
+  AnyViaPointLigament MidPhDistPh2Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.MiddlePhalange2.PhalangealLigNodeDist;
+    AnyRefNode &ref2 = ...Seg.DistalPhalange2.PhalangealLigNode;
+    
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.PlantarMidPhDistPh2Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+  #include "LigDriverAndMuscle.any"
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
+  };
+  
+  
+  
+  
+  
+  AnyViaPointLigament MidPhDistPh3Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.MiddlePhalange3.PhalangealLigNodeDist;
+    AnyRefNode &ref2 = ...Seg.DistalPhalange3.PhalangealLigNode;
+    
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.PlantarMidPhDistPh3Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+  #include "LigDriverAndMuscle.any"
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
+  };
+  
+  
+  
+  
+  
+  AnyViaPointLigament MidPhDistPh4Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.MiddlePhalange4.PhalangealLigNodeDist;
+    AnyRefNode &ref2 = ...Seg.DistalPhalange4.PhalangealLigNode;
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.PlantarMidPhDistPh4Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+    
+    #include "LigDriverAndMuscle.any"
+
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
+  };
+  
+  
+  
+  
+  
+  AnyViaPointLigament MidPhDistPh5Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.MiddlePhalange5.PhalangealLigNodeDist;
+    AnyRefNode &ref2 = ...Seg.DistalPhalange5.PhalangealLigNode;
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.PlantarMidPhDistPh5Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+   #include "LigDriverAndMuscle.any"
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
+    
+    
+    
+  };
+  
 };
 
 
-AnyFolder ProxPhMidPh2Lig = {
-  AnyViaPointMuscle Ligament = {
-    AnyMuscleModel &StrengthModel = .StrengthModel;
-    AnyRefNode &Org = ....Seg.ProximalPhalange2.PhalangealLigNode;
-    AnyRefNode &Ins = ....Seg.MiddlePhalange2.PhalangealLigNodeProx;
-    AnyDrawMuscle DrwMus = { RGB = Main.DrawSettings.Colors.Ligaments;};
+
+AnyFolder LigamentsPhalangealDorsal = {
+  //Ligaments stiffness is scaled together with the muscle strength so the same variable is reused.
+  //  AnyVar FootLigStiffnessScale = ..StrengthScaling.Foot.StrengthScale; 
+  //  AnyVar StiffnessCoeff = 0.5;
+  //  
+  //  AnyVar Pretension=0.98;
+  //  //The FullStrengthAngle is taken from the toe off position during gait,
+  //this is beleived to be the extended position.
+  //StartStrengthAngle is taken 3 deg before.
+  
+  
+  AnyViaPointLigament ProxPhDistPh1Lig = {
+    
+    
+    
+    AnyRefNode &ref1= ...Seg.ProximalPhalange1.PhalangealLigNodeDorsal;
+    AnyRefNode &ref2 = ...Seg.DistalPhalange1.ExtensorHallucisLongus1Node;
+    
+    
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.DorsalProxPhDistPh1Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+  #include "LigDriverAndMuscle.any"
+    
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
   };
   
-  AnyMuscleModelUsr1 StrengthModel = 
-  {
-    F0 = 0;
-    S = .StrengthFun(....Jnt.FootJnt.ProxPhMidPh2.Pos[0])[0];
+  
+  
+  
+  
+  AnyViaPointLigament ProxPhMidPh2Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.ProximalPhalange2.PhalangealLigNodeDorsal;
+    AnyRefNode &ref2 = ...Seg.MiddlePhalange2.PhalangealLigNodeProxDorsal;
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.DorsalProxPhMidPh2Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+   #include "LigDriverAndMuscle.any"
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
   };
   
-  AnyFunInterpol StrengthFun = 
-  {
-    AnyVar Strength = 500;
-    AnyVar FullStrengthAngle = 3; //4;
-    AnyVar StartStrengthAngle = 0; //1;
-    Type = Bspline;
-    BsplineOrder = 4;
-    T = {-100, -80, -60, StartStrengthAngle-3, StartStrengthAngle-1, StartStrengthAngle+1, FullStrengthAngle-1, FullStrengthAngle, FullStrengthAngle+2, FullStrengthAngle+4, 60, 80, 100}*pi/180;
-    Data = {{0, 0, 0, 0, 0, 0, Strength, Strength, Strength, Strength, Strength, Strength, Strength}};
+  
+  
+  
+  AnyViaPointLigament ProxPhMidPh3Lig = {
+    
+    AnyRefNode &ref1= ...Seg.ProximalPhalange3.PhalangealLigNodeDorsal;
+    AnyRefNode &ref2 = ...Seg.MiddlePhalange3.PhalangealLigNodeProxDorsal;
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.DorsalProxPhMidPh3Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+    #include "LigDriverAndMuscle.any"
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
   };
+  
+  
+  
+  
+  
+  AnyViaPointLigament ProxPhMidPh4Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.ProximalPhalange4.PhalangealLigNodeDorsal;
+    AnyRefNode &ref2 = ...Seg.MiddlePhalange4.PhalangealLigNodeProxDorsal;
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.DorsalProxPhMidPh4Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+   #include "LigDriverAndMuscle.any"
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
+  };
+  
+  
+  
+  
+  
+  AnyViaPointLigament ProxPhMidPh5Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.ProximalPhalange5.PhalangealLigNodeDorsal;
+    AnyRefNode &ref2 = ...Seg.MiddlePhalange5.PhalangealLigNodeProxDorsal;
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.DorsalProxPhMidPh5Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+   #include "LigDriverAndMuscle.any"
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
+  };
+  
+  
+  
+  
+  AnyViaPointLigament MidPhDistPh2Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.MiddlePhalange2.PhalangealLigNodeDistDorsal;
+    AnyRefNode &ref2 = ...Seg.DistalPhalange2.ExtensorDigitorumLongusNode;
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.DorsalMidPhDistPh2Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+    #include "LigDriverAndMuscle.any"
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
+  };
+  
+  
+  
+  
+  
+  AnyViaPointLigament MidPhDistPh3Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.MiddlePhalange3.PhalangealLigNodeDistDorsal;
+    AnyRefNode &ref2 = ...Seg.DistalPhalange3.ExtensorDigitorumLongusNode;
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.DorsalMidPhDistPh3Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+    #include "LigDriverAndMuscle.any"
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
+  };
+  
+  
+  
+  
+  
+  AnyViaPointLigament MidPhDistPh4Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.MiddlePhalange4.PhalangealLigNodeDistDorsal;
+    AnyRefNode &ref2 = ...Seg.DistalPhalange4.ExtensorDigitorumLongusNode;
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.DorsalMidPhDistPh4Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+   #include "LigDriverAndMuscle.any"
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
+  };
+  
+  
+  
+  
+  AnyViaPointLigament MidPhDistPh5Lig = {
+    
+    
+    AnyRefNode &ref1= ...Seg.MiddlePhalange5.PhalangealLigNodeDistDorsal;
+    AnyRefNode &ref2 = ...Seg.DistalPhalange5.ExtensorDigitorumLongusNode;
+    //AnyVar Pretension=..PretensionFactor;
+    AnyFolder &LigParms=..LigParams.DorsalMidPhDistPh5Lig;
+    AnyVar StiffScale=..FootLigStiffnessScale;
+    #include "LigParms.any"
+  #include "LigDriverAndMuscle.any"
+    
+    AnyVar Eps = (Line.Pos[0] - LigMdl.L0)/LigMdl.L0;
+    
+  };
+  
+  
+  
 };
 
 
-AnyFolder ProxPhMidPh3Lig = {
-  AnyViaPointMuscle Ligament = {
-    AnyMuscleModel &StrengthModel = .StrengthModel;
-    AnyRefNode &Org = ....Seg.ProximalPhalange3.PhalangealLigNode;
-    AnyRefNode &Ins = ....Seg.MiddlePhalange3.PhalangealLigNodeProx;
-    AnyDrawMuscle DrwMus = { RGB = Main.DrawSettings.Colors.Ligaments;};
-  };
-  
-  AnyMuscleModelUsr1 StrengthModel = 
-  {
-    F0 = 0;
-    S = .StrengthFun(....Jnt.FootJnt.ProxPhMidPh3.Pos[0])[0];
-  };
-  
-  AnyFunInterpol StrengthFun = 
-  {
-    AnyVar Strength = 500;
-    AnyVar FullStrengthAngle = 3; //11;
-    AnyVar StartStrengthAngle = 0; //8;
-    Type = Bspline;
-    BsplineOrder = 4;
-    T = {-100, -80, -60, StartStrengthAngle-3, StartStrengthAngle-1, StartStrengthAngle+1, FullStrengthAngle-1, FullStrengthAngle, FullStrengthAngle+2, FullStrengthAngle+4, 60, 80, 100}*pi/180;
-    Data = {{0, 0, 0, 0, 0, 0, Strength, Strength, Strength, Strength, Strength, Strength, Strength}};
-  };
-};
-
-
-AnyFolder ProxPhMidPh4Lig = {
-  AnyViaPointMuscle Ligament = {
-    AnyMuscleModel &StrengthModel = .StrengthModel;
-    AnyRefNode &Org = ....Seg.ProximalPhalange4.PhalangealLigNode;
-    AnyRefNode &Ins = ....Seg.MiddlePhalange4.PhalangealLigNodeProx;
-    AnyDrawMuscle DrwMus = { RGB = Main.DrawSettings.Colors.Ligaments;};
-  };
-  
-  AnyMuscleModelUsr1 StrengthModel = 
-  {
-    F0 = 0;
-    S = .StrengthFun(....Jnt.FootJnt.ProxPhMidPh4.Pos[0])[0];
-  };
-  
-  AnyFunInterpol StrengthFun = 
-  {
-    AnyVar Strength = 500;
-    AnyVar FullStrengthAngle = 13;
-    AnyVar StartStrengthAngle = 10;
-    Type = Bspline;
-    BsplineOrder = 4;
-    T = {-100, -80, -60, StartStrengthAngle-3, StartStrengthAngle-1, StartStrengthAngle+1, FullStrengthAngle-1, FullStrengthAngle, FullStrengthAngle+2, FullStrengthAngle+4, 60, 80, 100}*pi/180;
-    Data = {{0, 0, 0, 0, 0, 0, Strength, Strength, Strength, Strength, Strength, Strength, Strength}};
-  };
-};
-
-
-AnyFolder ProxPhMidPh5Lig = {
-  AnyViaPointMuscle Ligament = {
-    AnyMuscleModel &StrengthModel = .StrengthModel;
-    AnyRefNode &Org = ....Seg.ProximalPhalange5.PhalangealLigNode;
-    AnyRefNode &Ins = ....Seg.MiddlePhalange5.PhalangealLigNodeProx;
-    AnyDrawMuscle DrwMus = { RGB = Main.DrawSettings.Colors.Ligaments;};
-  };
-  
-  AnyMuscleModelUsr1 StrengthModel = 
-  {
-    F0 = 0;
-    S = .StrengthFun(....Jnt.FootJnt.ProxPhMidPh5.Pos[0])[0];
-  };
-  
-  AnyFunInterpol StrengthFun = 
-  {
-    AnyVar Strength = 500;
-    AnyVar FullStrengthAngle = 6;
-    AnyVar StartStrengthAngle = 3;
-    Type = Bspline;
-    BsplineOrder = 4;
-    T = {-100, -80, -60, StartStrengthAngle-3, StartStrengthAngle-1, StartStrengthAngle+1, FullStrengthAngle-1, FullStrengthAngle, FullStrengthAngle+2, FullStrengthAngle+4, 60, 80, 100}*pi/180;
-    Data = {{0, 0, 0, 0, 0, 0, Strength, Strength, Strength, Strength, Strength, Strength, Strength}};
-  };
-};
-
-
-AnyFolder MidPhDistPh2Lig = {
-  AnyViaPointMuscle Ligament = {
-    AnyMuscleModel &StrengthModel = .StrengthModel;
-    AnyRefNode &Org = ....Seg.MiddlePhalange2.PhalangealLigNodeDist;
-    AnyRefNode &Ins = ....Seg.DistalPhalange2.PhalangealLigNode;
-    AnyDrawMuscle DrwMus = { RGB = Main.DrawSettings.Colors.Ligaments;};
-  };
-  
-  AnyMuscleModelUsr1 StrengthModel = 
-  {
-    F0 = 0;
-    S = .StrengthFun(....Jnt.FootJnt.MidPhDistPh2.Pos[0])[0];
-  };
-  
-  AnyFunInterpol StrengthFun = 
-  {
-    AnyVar Strength = 500;
-    AnyVar FullStrengthAngle = 3;
-    AnyVar StartStrengthAngle = 0;
-    Type = Bspline;
-    BsplineOrder = 4;
-    T = {-100, -80, -60, StartStrengthAngle-3, StartStrengthAngle-1, StartStrengthAngle+1, FullStrengthAngle-1, FullStrengthAngle, FullStrengthAngle+2, FullStrengthAngle+4, 60, 80, 100}*pi/180;
-    Data = {{0, 0, 0, 0, 0, 0, Strength, Strength, Strength, Strength, Strength, Strength, Strength}};
-  };
-};
-
-
-AnyFolder MidPhDistPh3Lig = {
-  AnyViaPointMuscle Ligament = {
-    AnyMuscleModel &StrengthModel = .StrengthModel;
-    AnyRefNode &Org = ....Seg.MiddlePhalange3.PhalangealLigNodeDist;
-    AnyRefNode &Ins = ....Seg.DistalPhalange3.PhalangealLigNode;
-    AnyDrawMuscle DrwMus = { RGB = Main.DrawSettings.Colors.Ligaments;};
-  };
-  
-  AnyMuscleModelUsr1 StrengthModel = 
-  {
-    F0 = 0;
-    S = .StrengthFun(....Jnt.FootJnt.MidPhDistPh3.Pos[0])[0];
-  };
-  
-  AnyFunInterpol StrengthFun = 
-  {
-    AnyVar Strength = 500;
-    AnyVar FullStrengthAngle = 3;
-    AnyVar StartStrengthAngle = 0;
-    Type = Bspline;
-    BsplineOrder = 4;
-    T = {-100, -80, -60, StartStrengthAngle-3, StartStrengthAngle-1, StartStrengthAngle+1, FullStrengthAngle-1, FullStrengthAngle, FullStrengthAngle+2, FullStrengthAngle+4, 60, 80, 100}*pi/180;
-    Data = {{0, 0, 0, 0, 0, 0, Strength, Strength, Strength, Strength, Strength, Strength, Strength}};
-  };
-};
-
-
-AnyFolder MidPhDistPh4Lig = {
-  AnyViaPointMuscle Ligament = {
-    AnyMuscleModel &StrengthModel = .StrengthModel;
-    AnyRefNode &Org = ....Seg.MiddlePhalange4.PhalangealLigNodeDist;
-    AnyRefNode &Ins = ....Seg.DistalPhalange4.PhalangealLigNode;
-    AnyDrawMuscle DrwMus = { RGB = Main.DrawSettings.Colors.Ligaments;};
-  };
-  
-  AnyMuscleModelUsr1 StrengthModel = 
-  {
-    F0 = 0;
-    S = .StrengthFun(....Jnt.FootJnt.MidPhDistPh4.Pos[0])[0];
-  };
-  
-  AnyFunInterpol StrengthFun = 
-  {
-    AnyVar Strength = 500;
-    AnyVar FullStrengthAngle = 6;
-    AnyVar StartStrengthAngle = 3;
-    Type = Bspline;
-    BsplineOrder = 4;
-    T = {-100, -80, -60, StartStrengthAngle-3, StartStrengthAngle-1, StartStrengthAngle+1, FullStrengthAngle-1, FullStrengthAngle, FullStrengthAngle+2, FullStrengthAngle+4, 60, 80, 100}*pi/180;
-    Data = {{0, 0, 0, 0, 0, 0, Strength, Strength, Strength, Strength, Strength, Strength, Strength}};
-  };
-};
-
-
-AnyFolder MidPhDistPh5Lig = {
-  AnyViaPointMuscle Ligament = {
-    AnyMuscleModel &StrengthModel = .StrengthModel;
-    AnyRefNode &Org = ....Seg.MiddlePhalange5.PhalangealLigNodeDist;
-    AnyRefNode &Ins = ....Seg.DistalPhalange5.PhalangealLigNode;
-    AnyDrawMuscle DrwMus = { RGB = Main.DrawSettings.Colors.Ligaments;};
-  };
-  
-  AnyMuscleModelUsr1 StrengthModel = 
-  {
-    F0 = 0;
-    S = .StrengthFun(....Jnt.FootJnt.MidPhDistPh5.Pos[0])[0];
-  };
-  
-  AnyFunInterpol StrengthFun = 
-  {
-    AnyVar Strength = 500;
-    AnyVar FullStrengthAngle = 3;
-    AnyVar StartStrengthAngle = 0;
-    Type = Bspline;
-    BsplineOrder = 4;
-    T = {-100, -80, -60, StartStrengthAngle-3, StartStrengthAngle-1, StartStrengthAngle+1, FullStrengthAngle-1, FullStrengthAngle, FullStrengthAngle+2, FullStrengthAngle+4, 60, 80, 100}*pi/180;
-    Data = {{0, 0, 0, 0, 0, 0, Strength, Strength, Strength, Strength, Strength, Strength, Strength}};
-  };
-};
-
-
-}; // LigamentsPhalangeal
