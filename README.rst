@@ -1,40 +1,34 @@
 Glasgow-Maastricht Foot Model
 #############################
 
-This is a work in progress to reimplement the Glasgow-Maastricht (GM) Foot Model
-with the TLEM 2.1 lower extremity model. The old implementation of the GM foot
-model required its own modified implementation of the TLEM1 lower extremity
-model. This was a nightmare to maintain and made it impossible to use the model
-with new TLEM 2.1 model.
+This is the Glasgow-Maastricht (GM) Foot Model updated to work with 
+with the TLEM 2.1 lower extremity model. 
+
+The model was developed by AnyBody Technology developed in corporation with Glasgow Caledonian
+University and University of Maastricht inside the `AFootprint EU project <http://www.afootprint.eu/>`_ .
+
+The GM Foot Model is a a detailed multisegmental foot model, which is fully dynamic and
+contains 26 segments representing all the foot bones, muscles,
+ligaments, and joints connecting them.
+
 
 .. figure:: Tests/GM_foot.gif
   :align: center
 
-The goal is to restructure the GM foot model to integrate nicely into the TLEM
-2.1 model without duplicating the entire lower extremity model unnecessarily. We
-are sharing the model on GitHub to give everyone early access to the model and
-allow for users to help improve and test the model. 
-
+The model is currently distributed separate to the AnyBody Managed Model Repsitory (AMMR). 
 We plan to re-integrate the GM foot model with the AMMR once it is sufficiently
-stable and well tested. 
+stable and well tested.
+
+.. caution:: Scaling of the model is one area which is not well tested.
 
 
+Examples: 
+==========
 
-TODO: 
-=====
+The model contains two example applications. 
 
-#. Adjust (and validate) the new Ankle joint location, and ankle ligament insertions
-
-#. Align scaling between foot and Leg (TLEM2).
-
-#. Recrate the Joint moments measures with the new foot.
-
-#. Fix Free posture example application.
-
-#. Add GM foot example based on AnyMoCap.
-
-#. Test and Validate results.
-
+1. Free posture: This shows how to include the model into any model and how to control its degrees of freedom.
+2. MoCap: A motion capture model that shows how to use with MoCap data.
 
 Usage: 
 =============
