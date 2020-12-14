@@ -25,6 +25,10 @@
 
 // This disables the Ankle joint of the TLEM2 model 
 // so the FootGM model can redfine the position.
+#ifndef BM_JOINT_TYPE_ANKLE_RIGHT
 #define BM_JOINT_TYPE_ANKLE_RIGHT 0
+#endif 
+#ifndef BM_JOINT_TYPE_ANKLE_LEFT
 #define BM_JOINT_TYPE_ANKLE_LEFT 0
+#endif 
 

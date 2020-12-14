@@ -9,52 +9,20 @@
 //One of those four dof have to be driven, the three others are handled by the contact definition.
 
 
-  
- AnyFolder IntertarsalGlidingJoints = {
-   
-   AnyFolder &Seg = ...Seg;
-  
-   
-   //Flat version
-//  Seg.MedialCuneiform = {
-//    
-//    AnyRefNode EllipsoidNodeDorsal = {
-//      sRel = .Scale({0.03726055, -0.006417992, ......Sign*-0.00588518});
-//      //AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1,0,0};};
-//    };
-//    
-//    AnyRefNode EllipsoidNodeProximal = {
-//      sRel = .Scale({0.02454242, 0.01431341, ......Sign*-0.00597702});
-//      //AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1,0,0};};
-//    };
-//    
-//    AnyRefNode EllipsoidNodeLateral = {
-//      sRel = .Scale({0.0243125, -0.002428305, ......Sign*-0.0000772021});
-//      //AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1,0,0};};
-//    };
-//    
-//    AnyRefNode EllipsoidNode = {
-//      sRel = .Scale({0.02374927, -0.002738375, ......Sign*-0.002224994});
-//      ARel = RotMat(sRel, .EllipsoidNodeDorsal.sRel, .EllipsoidNodeProximal.sRel);
-//      //AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1,0,0};};
-//      AnySurfEllipsoid ContactEllipsoid = 
-//      {
-//        AnyVar Rx = vnorm(..EllipsoidNodeDorsal.sRel - .sRel);
-//        AnyVar Ry = vnorm(..EllipsoidNodeProximal.sRel - .sRel);
-//        AnyVar Rz = vnorm(..EllipsoidNodeLateral.sRel - .sRel);
-//        
-//        Radius = {Rx, Ry, Rz};
-//        AnyDrawParamSurf Draw = 
-//        {
-//          Visible = On;
-//          Opacity = 0.5;
-//        };
-//      };
-//    };
-//  };
-  
 
-
+AnyFolder IntertarsalGlidingJoints = {
+  
+  AnyFolder &Seg = ...Seg;
+  #define SimplifiedContact
+  
+  
+  
+  
+  #ifdef SimplifiedContact
+  
+  
+  
+  
   //round version
   Seg.MedialCuneiform = {
     
@@ -167,50 +135,6 @@
   
   
   
-  //flat version
-//  Seg.LateralCuneiform = {
-//    
-//    AnyRefNode EllipsoidNodeDorsal = {
-//      sRel = .Scale({0.0354965, 0.005603182, ......Sign*0.01601589});
-//      //AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1,0,0};};
-//    };
-//    
-//    AnyRefNode EllipsoidNodeProximal = {
-//      sRel = .Scale({0.02778995, 0.02006792, ......Sign*0.008332976});
-//      //AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1,0,0};};
-//    };
-//    
-//    AnyRefNode EllipsoidNodeLateral = {
-//      sRel = .Scale({0.02295879, 0.008831586, ......Sign*0.01301319});
-//      //AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1,0,0};};
-//    };
-//    
-//    AnyRefNode EllipsoidNode = {
-//      sRel = .Scale({0.02355879, 0.007831586, ......Sign*0.01101319});
-//      ARel = RotMat(sRel, .EllipsoidNodeDorsal.sRel, .EllipsoidNodeProximal.sRel);
-//      //AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1,0,0};};
-//      AnySurfEllipsoid ContactEllipsoid = 
-//      {
-//        AnyVar Rx = vnorm(..EllipsoidNodeDorsal.sRel - .sRel);
-//        AnyVar Ry = vnorm(..EllipsoidNodeProximal.sRel - .sRel);
-//        AnyVar Rz = vnorm(..EllipsoidNodeLateral.sRel - .sRel);
-//        
-//        Radius = {Rx, Ry, Rz};
-//        AnyDrawParamSurf Draw = 
-//        {
-//          Visible = On;
-//          Opacity = 0.5;
-//        };
-//      };
-//    };
-//    
-//    AnyRefNode EllipsoidNode2 = {
-//      //AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1,0,0};};
-//      sRel = .Scale({0.01524647, 0.008693984, ......Sign*0.01752757});
-//    };
-//  };
-  
-    
   
   //round version
   Seg.LateralCuneiform = {
@@ -269,19 +193,19 @@
     Mass = 0;
     Jii = {0, 0, 0};
     
-    AnyVar L = 0.0015;  //length of the side of the triangle
+    AnyVar L = 0.004;  //length of the side of the triangle
     
     AnyRefNode n1={  
       sRel={-0.5*.L*sin(60*pi/180),0.5*.L,0};
-         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
+      //         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
     };
     AnyRefNode n2={  
       sRel={0.5*.L*sin(60*pi/180),0,0};
-         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
+      //         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
     };
     AnyRefNode n3={  
       sRel={-0.5*.L*sin(60*pi/180),-0.5*.L,0};
-          AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
+      //          AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
     };
   };
   
@@ -289,109 +213,26 @@
   
   AnyKinEqSimpleDriver ContactSeg1Driver = {
     
-    AnyKinMeasureNormComb NormComb1 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.IntermediateCuneiform.EllipsoidNode1;
-            AnyRefFrame &Seg1 = ....ContactSeg1.n1;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.IntermediateCuneiform.EllipsoidNode1.ContactEllipsoid.Radius[0], 
-          1/..Seg.IntermediateCuneiform.EllipsoidNode1.ContactEllipsoid.Radius[1], 
-          1/..Seg.IntermediateCuneiform.EllipsoidNode1.ContactEllipsoid.Radius[2]
-        };
-      };
+    AnyKinPointSurface Ellipsoid_n1 =     {
+      AnySurfEllipsoid &EllipRef = ..Seg.IntermediateCuneiform.EllipsoidNode1.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg1.n1;
+      NormedMeasureOnOff =Off;
       
+    };
+    AnyKinPointSurface Ellipsoid_n2=     {
+      AnySurfEllipsoid &EllipRef =..Seg.IntermediateCuneiform.EllipsoidNode1.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg1.n2;
+      NormedMeasureOnOff =Off;
       
-      AnyKinMeasureNormComb NormComb2 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.IntermediateCuneiform.EllipsoidNode1;
-            AnyRefFrame &Seg1 = ....ContactSeg1.n2;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.IntermediateCuneiform.EllipsoidNode1.ContactEllipsoid.Radius[0], 
-          1/..Seg.IntermediateCuneiform.EllipsoidNode1.ContactEllipsoid.Radius[1], 
-          1/..Seg.IntermediateCuneiform.EllipsoidNode1.ContactEllipsoid.Radius[2]
-        };
-      };
+    };
+    AnyKinPointSurface Ellipsoid_n3=     {
+      AnySurfEllipsoid &EllipRef = ..Seg.IntermediateCuneiform.EllipsoidNode1.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg1.n3;
+      NormedMeasureOnOff =Off;
       
-      
-      AnyKinMeasureNormComb NormComb3 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.IntermediateCuneiform.EllipsoidNode1;
-            AnyRefFrame &Seg1 = ....ContactSeg1.n3;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.IntermediateCuneiform.EllipsoidNode1.ContactEllipsoid.Radius[0], 
-          1/..Seg.IntermediateCuneiform.EllipsoidNode1.ContactEllipsoid.Radius[1], 
-          1/..Seg.IntermediateCuneiform.EllipsoidNode1.ContactEllipsoid.Radius[2]
-        };
-      };
+    };
+    
+    
     
     
     AnyKinMeasureOrg RotZ = {
@@ -402,132 +243,54 @@
         Axis1 = z;
         Axis2 = y;
         Axis3 = x;
-        AnyRefFrame &Ref1 = ...Seg.IntermediateCuneiform.EllipsoidNode1;
         AnyRefFrame &Ref2 = ...ContactSeg1;
+        AnyRefFrame &Ref1 = ...Seg.IntermediateCuneiform.EllipsoidNode1;
       };
     };
     
-    DriverPos={1,1,1,0};
+    DriverPos={0,0,0,0};
     DriverVel ={0,0,0,0};
     Reaction.Type={Off,Off,Off,Off};
+    Reaction ={#include "DrawForceInJoint.any"};
+    
+    
   };
   
   
   
   
   AnyKinEqSimpleDriver ContactSeg1Driver2 = {
-
-    AnyKinMeasureNormComb NormComb1 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.MedialCuneiform.EllipsoidNode;
-            AnyRefFrame &Seg1 = ....ContactSeg1.n1;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.MedialCuneiform.EllipsoidNode.ContactEllipsoid.Radius[0], 
-          1/..Seg.MedialCuneiform.EllipsoidNode.ContactEllipsoid.Radius[1], 
-          1/..Seg.MedialCuneiform.EllipsoidNode.ContactEllipsoid.Radius[2]
-        };
-      };
-      
-      AnyKinMeasureNormComb NormComb2 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.MedialCuneiform.EllipsoidNode;
-            AnyRefFrame &Seg1 = ....ContactSeg1.n2;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.MedialCuneiform.EllipsoidNode.ContactEllipsoid.Radius[0], 
-          1/..Seg.MedialCuneiform.EllipsoidNode.ContactEllipsoid.Radius[1], 
-          1/..Seg.MedialCuneiform.EllipsoidNode.ContactEllipsoid.Radius[2]
-        };
-      };
-      
-      AnyKinMeasureNormComb NormComb3 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.MedialCuneiform.EllipsoidNode;
-            AnyRefFrame &Seg1 = ....ContactSeg1.n3;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.MedialCuneiform.EllipsoidNode.ContactEllipsoid.Radius[0], 
-          1/..Seg.MedialCuneiform.EllipsoidNode.ContactEllipsoid.Radius[1], 
-          1/..Seg.MedialCuneiform.EllipsoidNode.ContactEllipsoid.Radius[2]
-        };
-      };
     
-    DriverPos={1,1,1};
+    AnyKinPointSurface Ellipsoid_n1 =     {
+      AnySurfEllipsoid &EllipRef = ..Seg.MedialCuneiform.EllipsoidNode.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg1.n1;
+      NormedMeasureOnOff =Off;
+    };
+    AnyKinPointSurface Ellipsoid_n2=     {
+      AnySurfEllipsoid &EllipRef =..Seg.MedialCuneiform.EllipsoidNode.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg1.n2;
+      NormedMeasureOnOff =Off;
+      
+    };
+    AnyKinPointSurface Ellipsoid_n3=     {
+      AnySurfEllipsoid &EllipRef = ..Seg.MedialCuneiform.EllipsoidNode.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg1.n3;
+      NormedMeasureOnOff =Off;
+      
+    };
+    
+    DriverPos={0,0,0};
     DriverVel ={0,0,0};
     Reaction.Type={Off,Off,Off};
+    Reaction ={#include "DrawForceInJoint.any"};
+    
   };
   
   
+  //let one side carry entirely
   AnyReacForce ContactSeg1Support = {
     AnyKinMeasureOrg MeasureOrg = {
-      MeasureOrganizer = {0,1,3,4,5};
+      MeasureOrganizer = {0,1,2,3,4,5};
       AnyKinLinear Lin = 
       {
         Ref = 0;
@@ -544,66 +307,34 @@
         AnyRefFrame &Ref2 = ...Seg.IntermediateCuneiform.EllipsoidNode1;
       };
     };
+    #include "DrawForceInJoint.any"
+    
   };
   
-//  AnyReacForce ContactSeg1Support2 = {
-//    Type = NonNegative;
-//    AnyKinMeasureOrg MeasureOrg = {
-//      MeasureOrganizer = {2};
-//      AnyKinLinear Lin = 
-//      {
-//        Ref = 0;
-//        AnyRefFrame &Ref1 = ...ContactSeg1;
-//        AnyRefFrame &Ref2 = ...Seg.IntermediateCuneiform.EllipsoidNode1;
-//      };
-//    };
-//  };
-//  
-//  AnyReacForce ContactSeg1Support3 = {
-//    Type = NonPositive;
-//    AnyKinMeasureOrg MeasureOrg = {
-//      MeasureOrganizer = {2};
-//      AnyKinLinear Lin = 
-//      {
-//        Ref = 0;
-//        AnyRefFrame &Ref1 = ...ContactSeg1;
-//        AnyRefFrame &Ref2 = ...Seg.MedialCuneiform.EllipsoidNode;
-//      };
-//    };
-//  };
   
   
-  //***** Contact force with general muscle to avoid the unilateral reac force (could be unstable) *****
-  
-  AnyGeneralMuscle ContactSeg1Support2 = 
-  {
-    ForceDirection = 1;
-    AnyKinMeasureOrg MeasureOrg = {
-      MeasureOrganizer = {2};
-      AnyKinLinear Lin = 
-      {
-        Ref = 0;
-        AnyRefFrame &Ref1 = ...ContactSeg1;
-        AnyRefFrame &Ref2 = ...Seg.IntermediateCuneiform.EllipsoidNode1;
-      };
+  AnyFolder Contact_ContactSeg1Driver2 ={
+    AnyGeneralMuscle mus1 =  {
+      AnyKinPointSurface &ref =..ContactSeg1Driver2.Ellipsoid_n1; 
+      ForceDirection = 1;
+      AnyMuscleModel Model = { F0 = 1000; };
+      #include "DrawForceInJoint.any" 
     };
-    AnyMuscleModel Model = { F0 = 3000; };
-  };
-
-  AnyGeneralMuscle ContactSeg1Support3 = 
-  {
-    ForceDirection = -1;
-    AnyKinMeasureOrg MeasureOrg = {
-      MeasureOrganizer = {2};
-      AnyKinLinear Lin = 
-      {
-        Ref = 0;
-        AnyRefFrame &Ref1 = ...ContactSeg1;
-        AnyRefFrame &Ref2 = ...Seg.MedialCuneiform.EllipsoidNode;
-      };
+    AnyGeneralMuscle mus2 =  {
+      AnyKinPointSurface &ref =..ContactSeg1Driver2.Ellipsoid_n2; 
+      ForceDirection = 1;
+      AnyMuscleModel Model = { F0 = 1000; };
+      #include "DrawForceInJoint.any"
     };
-    AnyMuscleModel Model = { F0 = 3000; };
+    AnyGeneralMuscle mus3 =  {
+      AnyKinPointSurface &ref =..ContactSeg1Driver2.Ellipsoid_n3; 
+      ForceDirection = 1;
+      AnyMuscleModel Model = { F0=1000; };
+      #include "DrawForceInJoint.any"
+    };
+    
   };
+  
   
   
   
@@ -615,19 +346,19 @@
     Mass = 0;
     Jii = {0, 0, 0};
     
-    AnyVar L = 0.0015;  //length of the side of the triangle
+    AnyVar L = 0.002;  //length of the side of the triangle
     
     AnyRefNode n1={  
       sRel={-0.5*.L*sin(60*pi/180),0.5*.L,0};
-         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
+      //         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
     };
     AnyRefNode n2={  
       sRel={0.5*.L*sin(60*pi/180),0,0};
-         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
+      //         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
     };
     AnyRefNode n3={  
       sRel={-0.5*.L*sin(60*pi/180),-0.5*.L,0};
-          AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
+      //          AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
     };
   };
   
@@ -635,110 +366,24 @@
   
   AnyKinEqSimpleDriver ContactSeg2Driver = {
     
-    AnyKinMeasureNormComb NormComb1 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.IntermediateCuneiform.EllipsoidNode2;
-            AnyRefFrame &Seg1 = ....ContactSeg2.n1;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.IntermediateCuneiform.EllipsoidNode2.ContactEllipsoid.Radius[0], 
-          1/..Seg.IntermediateCuneiform.EllipsoidNode2.ContactEllipsoid.Radius[1], 
-          1/..Seg.IntermediateCuneiform.EllipsoidNode2.ContactEllipsoid.Radius[2]
-        };
-      };
-      
-      
-      AnyKinMeasureNormComb NormComb2 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.IntermediateCuneiform.EllipsoidNode2;
-            AnyRefFrame &Seg1 = ....ContactSeg2.n2;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.IntermediateCuneiform.EllipsoidNode2.ContactEllipsoid.Radius[0], 
-          1/..Seg.IntermediateCuneiform.EllipsoidNode2.ContactEllipsoid.Radius[1], 
-          1/..Seg.IntermediateCuneiform.EllipsoidNode2.ContactEllipsoid.Radius[2]
-        };
-      };
-      
-      
-      AnyKinMeasureNormComb NormComb3 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.IntermediateCuneiform.EllipsoidNode2;
-            AnyRefFrame &Seg1 = ....ContactSeg2.n3;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.IntermediateCuneiform.EllipsoidNode2.ContactEllipsoid.Radius[0], 
-          1/..Seg.IntermediateCuneiform.EllipsoidNode2.ContactEllipsoid.Radius[1], 
-          1/..Seg.IntermediateCuneiform.EllipsoidNode2.ContactEllipsoid.Radius[2]
-        };
-      };
     
+    AnyKinPointSurface Ellipsoid_n1 =     {
+      AnySurfEllipsoid &EllipRef = ..Seg.IntermediateCuneiform.EllipsoidNode2.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg2.n1;
+      NormedMeasureOnOff =Off;
+      
+    };
+    AnyKinPointSurface Ellipsoid_n2=     {
+      AnySurfEllipsoid &EllipRef =..Seg.IntermediateCuneiform.EllipsoidNode2.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg2.n2;
+      NormedMeasureOnOff =Off;
+      
+    };
+    AnyKinPointSurface Ellipsoid_n3=     {
+      AnySurfEllipsoid &EllipRef = ..Seg.IntermediateCuneiform.EllipsoidNode2.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg2.n3;
+      NormedMeasureOnOff =Off;
+    };
     
     AnyKinMeasureOrg RotZ = {
       MeasureOrganizer = {0};
@@ -753,127 +398,40 @@
       };
     };
     
-    DriverPos={1,1,1,0};
+    DriverPos={0,0,0,0};
     DriverVel ={0,0,0,0};
     Reaction.Type={Off,Off,Off,Off};
+    Reaction ={#include "DrawForceInJoint.any"};
   };
-
-  
   
   AnyKinEqSimpleDriver ContactSeg2Driver2 = {
-
-    AnyKinMeasureNormComb NormComb1 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.LateralCuneiform.EllipsoidNode;
-            AnyRefFrame &Seg1 = ....ContactSeg2.n1;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.LateralCuneiform.EllipsoidNode.ContactEllipsoid.Radius[0], 
-          1/..Seg.LateralCuneiform.EllipsoidNode.ContactEllipsoid.Radius[1], 
-          1/..Seg.LateralCuneiform.EllipsoidNode.ContactEllipsoid.Radius[2]
-        };
-      };
+    AnyKinPointSurface Ellipsoid_n1 =     {
+      AnySurfEllipsoid &EllipRef = ..Seg.LateralCuneiform.EllipsoidNode.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg2.n1;
+      NormedMeasureOnOff =Off;
       
-      AnyKinMeasureNormComb NormComb2 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.LateralCuneiform.EllipsoidNode;
-            AnyRefFrame &Seg1 = ....ContactSeg2.n2;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.LateralCuneiform.EllipsoidNode.ContactEllipsoid.Radius[0], 
-          1/..Seg.LateralCuneiform.EllipsoidNode.ContactEllipsoid.Radius[1], 
-          1/..Seg.LateralCuneiform.EllipsoidNode.ContactEllipsoid.Radius[2]
-        };
-      };
-      
-      AnyKinMeasureNormComb NormComb3 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.LateralCuneiform.EllipsoidNode;
-            AnyRefFrame &Seg1 = ....ContactSeg2.n3;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.LateralCuneiform.EllipsoidNode.ContactEllipsoid.Radius[0], 
-          1/..Seg.LateralCuneiform.EllipsoidNode.ContactEllipsoid.Radius[1], 
-          1/..Seg.LateralCuneiform.EllipsoidNode.ContactEllipsoid.Radius[2]
-        };
-      };
+    };
+    AnyKinPointSurface Ellipsoid_n2=     {
+      AnySurfEllipsoid &EllipRef =..Seg.LateralCuneiform.EllipsoidNode.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg2.n2;
+      NormedMeasureOnOff =Off;
+    };
+    AnyKinPointSurface Ellipsoid_n3=     {
+      AnySurfEllipsoid &EllipRef = ..Seg.LateralCuneiform.EllipsoidNode.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg2.n3;
+      NormedMeasureOnOff =Off;
+    };
     
-    DriverPos={1,1,1};
+    DriverPos={0,0,0};
     DriverVel ={0,0,0};
     Reaction.Type={Off,Off,Off};
+    Reaction ={#include "DrawForceInJoint.any"};
   };
-
   
   
   AnyReacForce ContactSeg2Support = {
     AnyKinMeasureOrg MeasureOrg = {
-      MeasureOrganizer = {0,1,3,4,5};
+      MeasureOrganizer = {0,1,2,3,4,5};
       AnyKinLinear Lin = 
       {
         Ref = 0;
@@ -890,69 +448,29 @@
         AnyRefFrame &Ref2 = ...Seg.IntermediateCuneiform.EllipsoidNode2;
       };
     };
-  };
-  
-//  AnyReacForce ContactSeg2Support2 = {
-//    Type = NonPositive;
-//    AnyKinMeasureOrg MeasureOrg = {
-//      MeasureOrganizer = {2};
-//      AnyKinLinear Lin = 
-//      {
-//        Ref = 0;
-//        AnyRefFrame &Ref1 = ...ContactSeg2;
-//        AnyRefFrame &Ref2 = ...Seg.IntermediateCuneiform.EllipsoidNode2;
-//      };
-//    };
-//  };
-//  
-//  AnyReacForce ContactSeg2Support3 = {
-//    Type = NonNegative;
-//    AnyKinMeasureOrg MeasureOrg = {
-//      MeasureOrganizer = {2};
-//      AnyKinLinear Lin = 
-//      {
-//        Ref = 0;
-//        AnyRefFrame &Ref1 = ...ContactSeg2;
-//        AnyRefFrame &Ref2 = ...Seg.LateralCuneiform.EllipsoidNode;
-//      };
-//    };
-//  };
-  
-  
-  //***** Contact force with general muscle to avoid the unilateral reac force (could be unstable) *****
-  
-  AnyGeneralMuscle ContactSeg2Support2 = 
-  {
-    ForceDirection = -1;
-    AnyKinMeasureOrg MeasureOrg = {
-      MeasureOrganizer = {2};
-      AnyKinLinear Lin = 
-      {
-        Ref = 0;
-        AnyRefFrame &Ref1 = ...ContactSeg2;
-        AnyRefFrame &Ref2 = ...Seg.IntermediateCuneiform.EllipsoidNode2;
-      };
-    };
-    AnyMuscleModel Model = { F0 = 3000; };
-  };
-
-  AnyGeneralMuscle ContactSeg2Support3 = 
-  {
-    ForceDirection = 1;
-    AnyKinMeasureOrg MeasureOrg = {
-      MeasureOrganizer = {2};
-      AnyKinLinear Lin = 
-      {
-        Ref = 0;
-        AnyRefFrame &Ref1 = ...ContactSeg2;
-        AnyRefFrame &Ref2 = ...Seg.LateralCuneiform.EllipsoidNode;
-      };
-    };
-    AnyMuscleModel Model = { F0 = 3000; };
+    #include "DrawForceInJoint.any"
+    
   };
   
   
-  
+  AnyFolder Contact_ContactSeg2Driver2 ={
+    AnyGeneralMuscle mus1 =  {
+      AnyKinPointSurface &ref =..ContactSeg2Driver2.Ellipsoid_n1; 
+      ForceDirection = 1;
+      AnyMuscleModel Model = { F0=1000; };
+      #include "DrawForceInJoint.any" };
+    AnyGeneralMuscle mus2 =  {
+      AnyKinPointSurface &ref =..ContactSeg2Driver2.Ellipsoid_n2; 
+      ForceDirection = 1;
+      AnyMuscleModel Model = { F0=1000; };
+      #include "DrawForceInJoint.any" };
+    AnyGeneralMuscle mus3 =  {
+      AnyKinPointSurface &ref =..ContactSeg2Driver2.Ellipsoid_n3; 
+      ForceDirection = 1;
+      AnyMuscleModel Model = { F0=1000; };
+      #include "DrawForceInJoint.any"};
+    
+  };
   
   Seg.Navicular = {
     AnyRefNode EllipsoidNode = {
@@ -968,8 +486,8 @@
   {
     //AnyDrawRefFrame drw = {ScaleXYZ = 0.02*{1,1,1};};
     AnyFunTransform3D &Scale = ....GeoScaling.Foot.ScaleFunction;
-//    r0 = .Seg.Navicular.r0 + .Seg.Navicular.EllipsoidNode.sRel *.Seg.Navicular.Axes0' - JointNode.sRel*Axes0';
-//    Axes0 = RotMat(.Seg.Navicular.r0 + .Seg.Navicular.EllipsoidNode.sRel *.Seg.Navicular.Axes0', .Seg.Navicular.r0 + .Seg.Navicular.EllipsoidNode.sRel *.Seg.Navicular.Axes0'+{1,0,0}*.Seg.Navicular.Axes0', .Seg.LateralCuneiform.r0 + .Seg.LateralCuneiform.EllipsoidNode2.sRel *.Seg.LateralCuneiform.Axes0') * RotMat(pi,x);
+    //    r0 = .Seg.Navicular.r0 + .Seg.Navicular.EllipsoidNode.sRel *.Seg.Navicular.Axes0' - JointNode.sRel*Axes0';
+    //    Axes0 = RotMat(.Seg.Navicular.r0 + .Seg.Navicular.EllipsoidNode.sRel *.Seg.Navicular.Axes0', .Seg.Navicular.r0 + .Seg.Navicular.EllipsoidNode.sRel *.Seg.Navicular.Axes0'+{1,0,0}*.Seg.Navicular.Axes0', .Seg.LateralCuneiform.r0 + .Seg.LateralCuneiform.EllipsoidNode2.sRel *.Seg.LateralCuneiform.Axes0') * RotMat(pi,x);
     r0 = .Seg.Navicular.r0;
     Axes0 = .Seg.Navicular.Axes0;
     Mass = 0;
@@ -1019,16 +537,14 @@
   
   
   
-  
-
-  AnyUniversalJoint NaviCuneiEllipsoidDummySegJoint = 
-  {
+  AnyUniversalJoint NaviCuneiEllipsoidDummySegJoint =   {
     Axis1 = x;
     Axis2 = z;
     AnyRefFrame &Navicular = .Seg.Navicular.EllipsoidNode;
     AnyRefFrame &DummySeg = .NaviCuneiEllipsoidDummySeg.JointNode;
+    Constraints.Reaction ={#include "DrawForceInJoint.any"};
   };
-
+  
   AnyKinEq NaviCuneiEllipsoidDummySegDriver = {
     AnyKinMeasureOrg MeasureOrg = {
       MeasureOrganizer = {0,2};
@@ -1040,45 +556,10 @@
       };
     };
     Reaction.Type = {On, On};
+    Reaction ={#include "DrawForceInJoint.any"};
   };
   
-  //Flat surface version, not very good
-//  Seg.Cuboid = {
-//    
-//    AnyRefNode EllipsoidNodeDorsal = {
-//      sRel = .Scale({0.02428825, 0.01701223, ......Sign*0.02806874});
-//      AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1,0,0};};
-//    };
-//    
-//    AnyRefNode EllipsoidNodeProximal = {
-//      sRel = .Scale({0.01848359, 0.02836137, ......Sign*0.00960742});
-//      AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1,0,0};};
-//    };
-//    
-//    AnyRefNode EllipsoidNodeLateral = {
-//      sRel = .Scale({0.01304376, 0.01704903, ......Sign*0.01981608});
-//      AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1,0,0};};
-//    };
-//    
-//    AnyRefNode EllipsoidNode = {
-//      sRel = .Scale({0.01404376, 0.01574903, ......Sign*0.0151608});
-//      ARel = RotMat(sRel, .EllipsoidNodeDorsal.sRel, .EllipsoidNodeProximal.sRel);
-//      AnyDrawRefFrame drw={ScaleXYZ={0.01,0.01,0.01};RGB={1,0,0};};
-//      AnySurfEllipsoid ContactEllipsoid = 
-//      {
-//        AnyVar Rx = vnorm(..EllipsoidNodeDorsal.sRel - .sRel);
-//        AnyVar Ry = vnorm(..EllipsoidNodeProximal.sRel - .sRel);
-//        AnyVar Rz = vnorm(..EllipsoidNodeLateral.sRel - .sRel);
-//        
-//        Radius = {Rx, Ry, Rz};
-//        AnyDrawParamSurf Draw = 
-//        {
-//          Visible = On;
-//          Opacity = 0.5;
-//        };
-//      };
-//    };
-//  };
+  
   
   //Round ellipsoid covering the whole bone, works better.
   Seg.Cuboid = {
@@ -1111,7 +592,7 @@
         Radius = {Rx, Ry, Rz};
         AnyDrawParamSurf Draw = 
         {
-          Visible = Off;
+          Visible = On;
           Opacity = 0.5;
         };
       };
@@ -1124,24 +605,24 @@
     r0 = .NaviCuneiEllipsoidDummySeg.r0 + .NaviCuneiEllipsoidDummySeg.EllipsoidNodeLateral.sRel *.NaviCuneiEllipsoidDummySeg.Axes0';
     Axes0 = .NaviCuneiEllipsoidDummySeg.Axes0*.NaviCuneiEllipsoidDummySeg.EllipsoidNode.ARel*RotMat(pi/2-....Sign*pi/2,x);
     
-//    r0 = .Seg.Cuboid.r0 + (.Seg.Cuboid.EllipsoidNode.sRel + {0,0, -....Sign*.Seg.Cuboid.EllipsoidNode.ContactEllipsoid.Rz}) *.Seg.Cuboid.Axes0';
-//    Axes0 = .Seg.Cuboid.Axes0*RotMat(pi/2-....Sign*pi/2,x);
+    //    r0 = .Seg.Cuboid.r0 + (.Seg.Cuboid.EllipsoidNode.sRel + {0,0, -....Sign*.Seg.Cuboid.EllipsoidNode.ContactEllipsoid.Rz}) *.Seg.Cuboid.Axes0';
+    //    Axes0 = .Seg.Cuboid.Axes0*RotMat(pi/2-....Sign*pi/2,x);
     Mass = 0;
     Jii = {0, 0, 0};
     
-    AnyVar L = 0.0015;  //length of the side of the triangle
+    AnyVar L = 0.002;  //length of the side of the triangle
     
     AnyRefNode n1={  
       sRel={-0.5*.L*sin(60*pi/180),0.5*.L,0};
-         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
+      AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
     };
     AnyRefNode n2={  
       sRel={0.5*.L*sin(60*pi/180),0,0};
-         AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
+      AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
     };
     AnyRefNode n3={  
       sRel={-0.5*.L*sin(60*pi/180),-0.5*.L,0};
-          AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
+      AnyDrawRefFrame  drw={RGB={0,1,0};ScaleXYZ=0.2*{0.05,0.05,0.05};};
     };
   };
   
@@ -1149,109 +630,29 @@
   
   AnyKinEqSimpleDriver ContactSeg3Driver = {
     
-    AnyKinMeasureNormComb NormComb1 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.Cuboid.EllipsoidNode;
-            AnyRefFrame &Seg1 = ....ContactSeg3.n1;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.Cuboid.EllipsoidNode.ContactEllipsoid.Radius[0], 
-          1/..Seg.Cuboid.EllipsoidNode.ContactEllipsoid.Radius[1], 
-          1/..Seg.Cuboid.EllipsoidNode.ContactEllipsoid.Radius[2]
-        };
-      };
+    
+    
+    AnyKinPointSurface Ellipsoid_n1 =     {
+      AnySurfEllipsoid &EllipRef = ..Seg.Cuboid.EllipsoidNode.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg3.n1;
+      NormedMeasureOnOff =Off;
       
+    };
+    AnyKinPointSurface Ellipsoid_n2=     {
+      AnySurfEllipsoid &EllipRef =..Seg.Cuboid.EllipsoidNode.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg3.n2;
+      NormedMeasureOnOff =Off;
       
-      AnyKinMeasureNormComb NormComb2 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.Cuboid.EllipsoidNode;
-            AnyRefFrame &Seg1 = ....ContactSeg3.n2;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.Cuboid.EllipsoidNode.ContactEllipsoid.Radius[0], 
-          1/..Seg.Cuboid.EllipsoidNode.ContactEllipsoid.Radius[1], 
-          1/..Seg.Cuboid.EllipsoidNode.ContactEllipsoid.Radius[2]
-        };
-      };
+    };
+    AnyKinPointSurface Ellipsoid_n3=     {
+      AnySurfEllipsoid &EllipRef = ..Seg.Cuboid.EllipsoidNode.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg3.n3;
+      NormedMeasureOnOff =Off;
       
-      
-      AnyKinMeasureNormComb NormComb3 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....Seg.Cuboid.EllipsoidNode;
-            AnyRefFrame &Seg1 = ....ContactSeg3.n3;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..Seg.Cuboid.EllipsoidNode.ContactEllipsoid.Radius[0], 
-          1/..Seg.Cuboid.EllipsoidNode.ContactEllipsoid.Radius[1], 
-          1/..Seg.Cuboid.EllipsoidNode.ContactEllipsoid.Radius[2]
-        };
-      };
+    };
+    
+    
+    
     
     
     AnyKinMeasureOrg RotZ = {
@@ -1267,128 +668,49 @@
       };
     };
     
-    DriverPos={1,1,1,0};
+    DriverPos={0,0,0,0};
     DriverVel ={0,0,0,0};
     Reaction.Type={Off,Off,Off,Off};
+    // #include "DrawForceInJoint.any"
+    
   };
-
+  
   
   
   AnyKinEqSimpleDriver ContactSeg3Driver2 = {
     
-    AnyKinMeasureNormComb NormComb1 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....NaviCuneiEllipsoidDummySeg.EllipsoidNode;
-            AnyRefFrame &Seg1 = ....ContactSeg3.n1;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..NaviCuneiEllipsoidDummySeg.EllipsoidNode.ContactEllipsoid.Radius[0], 
-          1/..NaviCuneiEllipsoidDummySeg.EllipsoidNode.ContactEllipsoid.Radius[1], 
-          1/..NaviCuneiEllipsoidDummySeg.EllipsoidNode.ContactEllipsoid.Radius[2]
-        };
-      };
+    AnyKinPointSurface Ellipsoid_n1 =     {
+      AnySurfEllipsoid &EllipRef = ..NaviCuneiEllipsoidDummySeg.EllipsoidNode.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg3.n1;
+      NormedMeasureOnOff =Off;
       
+    };
+    AnyKinPointSurface Ellipsoid_n2=     {
+      AnySurfEllipsoid &EllipRef =..NaviCuneiEllipsoidDummySeg.EllipsoidNode.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg3.n2;
+      NormedMeasureOnOff =Off;
       
-      AnyKinMeasureNormComb NormComb2 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....NaviCuneiEllipsoidDummySeg.EllipsoidNode;
-            AnyRefFrame &Seg1 = ....ContactSeg3.n2;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..NaviCuneiEllipsoidDummySeg.EllipsoidNode.ContactEllipsoid.Radius[0], 
-          1/..NaviCuneiEllipsoidDummySeg.EllipsoidNode.ContactEllipsoid.Radius[1], 
-          1/..NaviCuneiEllipsoidDummySeg.EllipsoidNode.ContactEllipsoid.Radius[2]
-        };
-      };
+    };
+    AnyKinPointSurface Ellipsoid_n3=     {
+      AnySurfEllipsoid &EllipRef = ..NaviCuneiEllipsoidDummySeg.EllipsoidNode.ContactEllipsoid ;
+      AnyRefFrame &Seg1 = ..ContactSeg3.n3;
+      NormedMeasureOnOff =Off;
       
-      
-      AnyKinMeasureNormComb NormComb3 = 
-      {
-        AnyKinMeasureOrg xCoo = 
-        {
-          MeasureOrganizer = {0};
-          AnyKinLinear Lin = 
-          {
-            Ref = 0;
-            AnyRefFrame &EllipRef = ....NaviCuneiEllipsoidDummySeg.EllipsoidNode;
-            AnyRefFrame &Seg1 = ....ContactSeg3.n3;
-          };
-        };
-        
-        AnyKinMeasureOrg yCoo = 
-        {
-          MeasureOrganizer = {1};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-        
-        AnyKinMeasureOrg zCoo = 
-        {
-          MeasureOrganizer = {2};
-          AnyKinLinear &Lin = .xCoo.Lin;
-        };
-
-        Order = 2;
-        Offset = 0;
-        Weight = {
-          1/..NaviCuneiEllipsoidDummySeg.EllipsoidNode.ContactEllipsoid.Radius[0], 
-          1/..NaviCuneiEllipsoidDummySeg.EllipsoidNode.ContactEllipsoid.Radius[1], 
-          1/..NaviCuneiEllipsoidDummySeg.EllipsoidNode.ContactEllipsoid.Radius[2]
-        };
-      };
+    };
     
-    DriverPos={1,1,1};
+    
+    
+    
+    DriverPos={0,0,0};
     DriverVel ={0,0,0};
     Reaction.Type={Off,Off,Off};
+    Reaction ={#include "DrawForceInJoint.any"};
+    
   };
-  
   
   AnyReacForce ContactSeg3Support = {
     AnyKinMeasureOrg MeasureOrg = {
-      MeasureOrganizer = {0,1,3,4,5};
+      MeasureOrganizer = {0,1,2,3,4,5};
       AnyKinLinear Lin = 
       {
         Ref = 0;
@@ -1405,70 +727,39 @@
         AnyRefFrame &Ref2 = ...Seg.Cuboid.EllipsoidNode;
       };
     };
+    // #include "DrawForceInJoint.any"
   };
   
-//  AnyReacForce ContactSeg3Support2 = {
-//    Type = NonNegative;
-//    AnyKinMeasureOrg MeasureOrg = {
-//      MeasureOrganizer = {2};
-//      AnyKinLinear Lin = 
-//      {
-//        Ref = 0;
-//        AnyRefFrame &Ref1 = ...ContactSeg3;
-//        AnyRefFrame &Ref2 = ...Seg.Cuboid.EllipsoidNode;
-//      };
-//    };
-//  };
-//  
-//  AnyReacForce ContactSeg3Support3 = {
-//    Type = NonPositive;
-//    AnyKinMeasureOrg MeasureOrg = {
-//      MeasureOrganizer = {2};
-//      AnyKinLinear Lin = 
-//      {
-//        Ref = 0;
-//        AnyRefFrame &Ref1 = ...ContactSeg3;
-//        AnyRefFrame &Ref2 = ...NaviCuneiEllipsoidDummySeg.EllipsoidNode;
-//      };
-//    };
-//  };
   
-  
-  //***** Contact force with general muscle to avoid the unilateral reac force (could be unstable) *****
-  
-  AnyGeneralMuscle ContactSeg3Support2 = 
-  {
-    ForceDirection = 1;
-    AnyKinMeasureOrg MeasureOrg = {
-      MeasureOrganizer = {2};
-      AnyKinLinear Lin = 
-      {
-        Ref = 0;
-        AnyRefFrame &Ref1 = ...ContactSeg3;
-        AnyRefFrame &Ref2 = ...Seg.Cuboid.EllipsoidNode;
-      };
-    };
-    AnyMuscleModel Model = { F0 = 3000; };
+  AnyFolder Contact_ContactSeg3Driver2 ={
+    AnyGeneralMuscle mus1 =  {
+      AnyKinPointSurface &ref =..ContactSeg3Driver2.Ellipsoid_n1; 
+      ForceDirection = 1;
+      AnyMuscleModel Model = { F0=1000; };
+      #include "DrawForceInJoint.any" };
+    AnyGeneralMuscle mus2 =  {
+      AnyKinPointSurface &ref =..ContactSeg3Driver2.Ellipsoid_n2; 
+      ForceDirection = 1;
+      AnyMuscleModel Model = { F0=1000; };
+      #include "DrawForceInJoint.any" };
+    AnyGeneralMuscle mus3 =  {
+      AnyKinPointSurface &ref =..ContactSeg3Driver2.Ellipsoid_n3; 
+      ForceDirection = 1;
+      AnyMuscleModel Model = { F0=1000; };
+      #include "DrawForceInJoint.any"};
+    
   };
-
-  AnyGeneralMuscle ContactSeg3Support3 = 
-  {
-    ForceDirection = -1;
-    AnyKinMeasureOrg MeasureOrg = {
-      MeasureOrganizer = {2};
-      AnyKinLinear Lin = 
-      {
-        Ref = 0;
-        AnyRefFrame &Ref1 = ...ContactSeg3;
-        AnyRefFrame &Ref2 = ...NaviCuneiEllipsoidDummySeg.EllipsoidNode;
-      };
-    };
-    AnyMuscleModel Model = { F0 = 3000; };
-  };
+  
+  #endif
+  
+  
+  #undef SimplifiedContact
+  
   
   
 };//IntertarsalGlidingJoints
 
+
   
   
   
@@ -1480,4 +771,7 @@
   
   
   
-  
+
+
+
+
