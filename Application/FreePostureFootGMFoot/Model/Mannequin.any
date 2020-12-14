@@ -1,0 +1,207 @@
+
+AnyFolder& Mannequin = Main.HumanModel.Mannequin;
+Mannequin.Posture = 
+  {
+    PelvisPosX = 0.045999999999999999;
+    PelvisPosY = 1.1599999999999999;
+    PelvisPosZ = 0.0;
+    PelvisRotX = 0.0;
+    PelvisRotY = 0.0;
+    PelvisRotZ = 0.0;
+    PelvisThoraxExtension = 0.0;
+    PelvisThoraxLateralBending = 0.0;
+    PelvisThoraxRotation = 0.0;
+    NeckExtension = 0.0;
+    NeckLateralBending = 0.0;
+    NeckRotation = 0.0;
+    Right = 
+      {
+        SternoClavicularProtraction = -23.0;
+        SternoClavicularElevation = 11.5;
+        SternoClavicularAxialRotation = -20.0;
+        GlenohumeralFlexion = 0.0;
+        GlenohumeralAbduction = 10.0;
+        GlenohumeralExternalRotation = 0.0;
+        ElbowFlexion = 0.01;
+        ElbowPronation = -20.0;
+        WristFlexion = 0.0;
+        WristAbduction = 0.0;
+        HipFlexion = 0.0;
+        HipAbduction = 5.0;
+        HipExternalRotation = 0.0;
+        KneeFlexion = 0.0;
+        AnklePlantarFlexion = 0.0;
+        SubTalarEversion = 0.0;
+        Finger1 = 
+          {
+            CMCDeviation = -20.0;
+            CMCFlexion = 20.0;
+            MCPFlexion = 20.0;
+            MCPDeviation = 0.0;
+            DIPFlexion = 20.0;
+          };
+        Finger2 = 
+          {
+            MCPFlexion = 20.0;
+            PIPFlexion = 20.0;
+            DIPFlexion = 20.0;
+          };
+        Finger3 = 
+          {
+            MCPFlexion = 20.0;
+            PIPFlexion = 20.0;
+            DIPFlexion = 20.0;
+          };
+        Finger4 = 
+          {
+            MCPFlexion = 20.0;
+            PIPFlexion = 20.0;
+            DIPFlexion = 20.0;
+          };
+        Finger5 = 
+          {
+            MCPFlexion = 20.0;
+            PIPFlexion = 20.0;
+            DIPFlexion = 20.0;
+          };
+        TaloNavicularDorsiFlexion = 0.0;
+        TaloNavicularAbduction = 0.0;
+        TaloNavicularEversion = 0.0;
+        CalcaneoCuboidDorsiFlexion = 0.0;
+        CalcaneoCuboidAbduction = 0.0;
+        CalcaneoCuboidEversion = 0.0;
+        NaviculoMedialCuneiformDorsiFlexion = 0.0;
+        NaviculoMedialCuneiformAbduction = 0.0;
+        NaviculoMedialCuneiformEversion = 0.0;
+        NaviculoIntermediateCuneiformDorsiFlexion = 0.0;
+        NaviculoIntermediateCuneiformAbduction = 0.0;
+        NaviculoLateralCuneiformDorsiFlexion = 0.0;
+        NaviculoLateralCuneiformAbduction = 0.0;
+        TarsoMetatarsal1DorsiFlexion = 0.0;
+        TarsoMetatarsal1Abduction = 0.0;
+        TarsoMetatarsal1Eversion = 0.0;
+        TarsoMetatarsal2DorsiFlexion = 0.0;
+        TarsoMetatarsal2Abduction = 0.0;
+        TarsoMetatarsal3DorsiFlexion = 0.0;
+        TarsoMetatarsal3Abduction = 0.0;
+        TarsoMetatarsal4DorsiFlexion = 0.0;
+        TarsoMetatarsal4Abduction = 0.0;
+        TarsoMetatarsal5SkewDorsiFlexion = 0.0;
+        TarsoMetatarsal5SkewEversion = 0.0;
+        TarsoMetatarsal5Abduction = 0.0;
+        MetatarsoPhalangeal1DorsiFlexion = 0.0;
+        MetatarsoPhalangeal1Abduction = 0.0;
+        MetatarsoPhalangeal2DorsiFlexion = 0.0;
+        MetatarsoPhalangeal2Abduction = 0.0;
+        MetatarsoPhalangeal3DorsiFlexion = 0.0;
+        MetatarsoPhalangeal3Abduction = 0.0;
+        MetatarsoPhalangeal4DorsiFlexion = 0.0;
+        MetatarsoPhalangeal4Abduction = 0.0;
+        MetatarsoPhalangeal5DorsiFlexion = 0.0;
+        MetatarsoPhalangeal5Abduction = 0.0;
+        ProximoDistalPhalange1DorsiFlexion = 0.0;
+        ProximoMedialPhalange2DorsiFlexion = 0.0;
+        ProximoMedialPhalange3DorsiFlexion = 0.0;
+        ProximoMedialPhalange4DorsiFlexion = 0.0;
+        ProximoMedialPhalange5DorsiFlexion = 0.0;
+        MedioDistalPhalange2DorsiFlexion = 0.0;
+        MedioDistalPhalange3DorsiFlexion = 0.0;
+        MedioDistalPhalange4DorsiFlexion = 0.0;
+        MedioDistalPhalange5DorsiFlexion = 0.0;
+      };
+    Left = 
+      {
+        SternoClavicularProtraction = -23.0;
+        SternoClavicularElevation = 11.5;
+        SternoClavicularAxialRotation = -20.0;
+        GlenohumeralFlexion = 0.0;
+        GlenohumeralAbduction = 10.0;
+        GlenohumeralExternalRotation = 0.0;
+        ElbowFlexion = 0.01;
+        ElbowPronation = -20.0;
+        WristFlexion = 0.0;
+        WristAbduction = 0.0;
+        HipFlexion = 0.0;
+        HipAbduction = 5.0;
+        HipExternalRotation = 0.0;
+        KneeFlexion = 0.0;
+        AnklePlantarFlexion = 0.0;
+        SubTalarEversion = 0.0;
+        Finger1 = 
+          {
+            CMCDeviation = -20.0;
+            CMCFlexion = 20.0;
+            MCPFlexion = 20.0;
+            MCPDeviation = 0.0;
+            DIPFlexion = 20.0;
+          };
+        Finger2 = 
+          {
+            MCPFlexion = 20.0;
+            PIPFlexion = 20.0;
+            DIPFlexion = 20.0;
+          };
+        Finger3 = 
+          {
+            MCPFlexion = 20.0;
+            PIPFlexion = 20.0;
+            DIPFlexion = 20.0;
+          };
+        Finger4 = 
+          {
+            MCPFlexion = 20.0;
+            PIPFlexion = 20.0;
+            DIPFlexion = 20.0;
+          };
+        Finger5 = 
+          {
+            MCPFlexion = 20.0;
+            PIPFlexion = 20.0;
+            DIPFlexion = 20.0;
+          };
+        TaloNavicularDorsiFlexion = 0.0;
+        TaloNavicularAbduction = 0.0;
+        TaloNavicularEversion = 0.0;
+        CalcaneoCuboidDorsiFlexion = 0.0;
+        CalcaneoCuboidAbduction = 0.0;
+        CalcaneoCuboidEversion = 0.0;
+        NaviculoMedialCuneiformDorsiFlexion = 0.0;
+        NaviculoMedialCuneiformAbduction = 0.0;
+        NaviculoMedialCuneiformEversion = 0.0;
+        NaviculoIntermediateCuneiformDorsiFlexion = 0.0;
+        NaviculoIntermediateCuneiformAbduction = 0.0;
+        NaviculoLateralCuneiformDorsiFlexion = 0.0;
+        NaviculoLateralCuneiformAbduction = 0.0;
+        TarsoMetatarsal1DorsiFlexion = 0.0;
+        TarsoMetatarsal1Abduction = 0.0;
+        TarsoMetatarsal1Eversion = 0.0;
+        TarsoMetatarsal2DorsiFlexion = 0.0;
+        TarsoMetatarsal2Abduction = 0.0;
+        TarsoMetatarsal3DorsiFlexion = 0.0;
+        TarsoMetatarsal3Abduction = 0.0;
+        TarsoMetatarsal4DorsiFlexion = 0.0;
+        TarsoMetatarsal4Abduction = 0.0;
+        TarsoMetatarsal5SkewDorsiFlexion = 0.0;
+        TarsoMetatarsal5SkewEversion = 0.0;
+        TarsoMetatarsal5Abduction = 0.0;
+        MetatarsoPhalangeal1DorsiFlexion = 0.0;
+        MetatarsoPhalangeal1Abduction = 0.0;
+        MetatarsoPhalangeal2DorsiFlexion = 0.0;
+        MetatarsoPhalangeal2Abduction = 0.0;
+        MetatarsoPhalangeal3DorsiFlexion = 0.0;
+        MetatarsoPhalangeal3Abduction = 0.0;
+        MetatarsoPhalangeal4DorsiFlexion = 0.0;
+        MetatarsoPhalangeal4Abduction = 0.0;
+        MetatarsoPhalangeal5DorsiFlexion = 0.0;
+        MetatarsoPhalangeal5Abduction = 0.0;
+        ProximoDistalPhalange1DorsiFlexion = 0.0;
+        ProximoMedialPhalange2DorsiFlexion = 0.0;
+        ProximoMedialPhalange3DorsiFlexion = 0.0;
+        ProximoMedialPhalange4DorsiFlexion = 0.0;
+        ProximoMedialPhalange5DorsiFlexion = 0.0;
+        MedioDistalPhalange2DorsiFlexion = 0.0;
+        MedioDistalPhalange3DorsiFlexion = 0.0;
+        MedioDistalPhalange4DorsiFlexion = 0.0;
+        MedioDistalPhalange5DorsiFlexion = 0.0;
+      };
+  };

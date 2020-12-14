@@ -1,0 +1,54 @@
+//define = (
+//   [
+//    {'BM_LEG_RIGHT': 'OFF'},
+//    {'BM_LEG_LEFT':  'OFF'},
+//    {}
+//   [
+//    {'BM_LEG_MUSCLES_BOTH':'OFF'},
+//    {'BM_LEG_MUSCLES_BOTH':'_MUSCLES_SIMPLE_'},
+//    {'BM_LEG_MUSCLES_BOTH':'_MUSCLES_3E_HILL_'},
+//  ])
+
+#define ANYBODY_PATH_OUTPUT "."
+#include "../FootGM/GM_Foot_libdef.any"
+#include "libdef.any"
+
+Main = {  
+  // ----------------------------------------------------------
+  // Model configuration:
+  // For more info on body model configuration options please load the model and double click on: 
+  // #path HTML_DOC "<AMMR_PATH_DOC>/bm_config/index.html"
+  // ----------------------------------------------------------
+  #ifndef TEST_NAME
+  #define BM_LEG_MUSCLES_BOTH ON
+  #define BM_LEG_LEFT OFF
+  #endif
+  
+Main.DrawSettings.Muscle.Opacity = 0.2;
+// // Setup required for using th GM foot model
+// #define BM_SCALING _SCALING_XYZ_
+//  Main.HumanModel.Anthropometrics.SegmentScaleFactors.Right.Thigh.LengthScale = 1.2;
+//  Main.HumanModel.Anthropometrics.SegmentScaleFactors.Left.Thigh.LengthScale = 1.2;
+//  Main.HumanModel.Anthropometrics.SegmentScaleFactors.Right.Shank.LengthScale = 1.2;
+//  Main.HumanModel.Anthropometrics.SegmentScaleFactors.Left.Shank.LengthScale = 1.2;
+
+    
+ #include "<GM_FOOT_PATH>/GM_foot_model.any"
+
+  
+  
+  AnyFolder Model ={
+    AnyFolder &HumanModel=.HumanModel.BodyModel;
+    
+  };
+
+  AnyBodyStudy Study = {
+    AnyFolder &Model = .Model;
+    tEnd = 1.0;
+    Gravity = {0.0, -9.81, 0.0};
+    nStep = 1;
+  }; // End of study
+  
+}; //Main
+
+
