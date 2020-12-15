@@ -2,7 +2,9 @@ Glasgow-Maastricht Foot Model
 #############################
 
 This is the Glasgow-Maastricht (GM) Foot Model updated to work with 
-with the TLEM 2.1 lower extremity model. 
+with the TLEM 2.1 lower extremity model.
+
+.. note:: The model updated 14th Dec. 2020 to also include MoCap support.
 
 The model was developed by AnyBody Technology developed in corporation with Glasgow Caledonian
 University and University of Maastricht inside the `AFootprint EU project <http://www.afootprint.eu/>`_ .
